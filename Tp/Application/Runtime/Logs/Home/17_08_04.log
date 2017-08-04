@@ -1,0 +1,20 @@
+[ 2017-08-04T16:22:09+08:00 ] 127.0.0.1 /Tp/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
+INFO: [ app_init ] --END-- [ RunTime:0.024561s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.020179s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.020240s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.017593s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.017704s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.070317s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.070360s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.019170s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.019205s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.015522s ]
+INFO: [ app_end ] --END-- [ RunTime:0.015558s ]
+
