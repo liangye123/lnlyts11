@@ -92,8 +92,7 @@
 
 <!--[if lt IE 9]>
 <div style='border: 4px solid #FFF500; background: #FDFDC8; text-align: center; clear: both; height: 75px; position: fixed; z-index:999999999; right: 2px; bottom: 2px; left: 2px; padding:0 8px;'>
-    <div style='position: absolute; right: 3px; top: 3px; font-weight: bold;z-index:999999999'><a href='#'
-                                                                                                  onclick='javascript:this.parentNode.parentNode.style.display="none"; return false;'>关闭</a>
+    <div style='position: absolute; right: 3px; top: 3px; font-weight: bold;z-index:999999999'><a href='#'>
     </div>
     <div style='width: 740px; margin: 0 auto; text-align: left; padding: 0; overflow: hidden; color: black;'>
         <div style='width: 675px; float: left;'>
@@ -106,32 +105,18 @@
     </div>
 </div>
 <![endif]-->
-
-
 <img style="display: none;" src="picture/e99e0b623bec4163b3582e9ce6dad0e6.gif"/>
-
-
 <div class="wdg-second-header-lg">
     <div class="main-section">
-
-
         <a href="/?wpFromPos=registerLogo" class="brand-logo mt15 rrd-log-img">
             <img src="picture/rrd_logo@2x_deea0ef_1.png" alt="logo人人贷理财官网"/>
         </a>
-
-
     </div>
 </div>
-
-
 <div class="main-content">
-
-
     <div class="login-index">
-
         <div class="car-center">
             <div class="spot">
-
             </div>
             <div class="data-show ">
                 <div class="tab">
@@ -143,26 +128,18 @@
                     <div class="login-form">
                         <ul class="login-ul">
                             <li>
-
-
                                 <input class="ui-input" type="text" placeholder="请输入手机号/邮箱" maxlength="48"
                                        onKeyDown="if (this.value.length>=48 ){event.returnValue=false}"
                                        name="j_username" id="j_username" data-is="isMobileOrEmail" autocomplete="off"/>
-
                             </li>
                             <li>
                                 <input class="ui-input " id="J_pass_input" placeholder="请输入密码" type="password"
                                        name='j_password' data-is="isEmail"/>
-
                             </li>
-
                             <li class="validate-image input-hide">
                                 <input class="code" name="j_code" id="randCode" type="text" placeholder="图形验证"/>
-                                <a href="javascript:void(0)" class="rand-code"><img id="randImage" align="absmiddle"
-                                                                                    src="picture/aed62d1e90ef46b18b976cb434547073.gif"
-                                                                                    name="randImage" alt="验证码"/></a>
+                                <a href="javascript:void(0)" class="rand-code"><img id="randImage" align="absmiddle"src="picture/aed62d1e90ef46b18b976cb434547073.gif" name="randImage" alt="验证码"/></a>
                             </li>
-
                         </ul>
                         <div class="rember">
                             <div class="rember-le">
@@ -177,7 +154,6 @@
                         </div>
                         <input type="hidden" id="targetUrl" name="targetUrl" value=""/>
                         <input type="hidden" id="returnUrl" name="returnUrl" value=""/>
-
                         <div class="submit">
                             <input type="submit" class="login-btn" value='立即登录'/>
                             <img src="picture/loading_dbf3776_1.gif"/>
@@ -188,10 +164,7 @@
                             </div>
                             <a class="findpsw" href="/findPwd.action">忘记密码?</a>
                         </div>
-
                     </div>
-
-
                     <script id="email-suggest-template" type="text/x-handlebars-template">
                         <ul>
                             {{#if remove}}
@@ -213,10 +186,7 @@
                             </li>
                             <li class="rand_code_show">
                                 <input class="code" name="type" id="reg_RandCode" type="text" placeholder="图形验证"/>
-                                <a href="javascript:void(0)" class="rand-code"><img id="reg-rand-image"
-                                                                                    align="absmiddle"
-                                                                                    src="picture/image_https_1.jsp"
-                                                                                    name="randImage" alt="验证码"/></a>
+                                <a href="javascript:void(0)" class="rand-code"><img id="reg-rand-image" align="absmiddle" src="picture/image_https_1.jsp" name="randImage" alt="验证码"/></a>
                             </li>
                             <li>
                                 <input class="code" autocomplete="off" name="mobileCode" id="reg_verif" type="text"
@@ -256,32 +226,18 @@
             </div>
         </div>
         <ul class="login-carousel">
-
-
             <li>
                 <span><img src="picture/pc_zcyxw_0804_1.jpg" alt="登录的轮播图"/></span>
             </li>
-
         </ul>
     </div>
-
-
 </div>
-
-
 <div class="login-footer">
     <ul class="lg-footer-ul">
-
-
         <li><span>© 2017 人人贷 All rights reserved</span><i></i></li>
         <li><span>人人贷商务顾问(北京)有限公司</span><i></i></li>
-
-
         <li><span>京公网安备11010802021944</span><i></i></li>
-
-
         <li><span>京ICP备12025643号-1</span></li>
-
     </ul>
     <!--<div class="login-company">北京微财科技有限公司</div>-->
 </div>
@@ -322,18 +278,15 @@
 <script type="text/javascript" src="js/passport_wdg_85e07c4_1.js"></script>
 <script type="text/javascript" src="js/index_46c4ad9_1.js"></script>
 <script type="text/javascript" src="js/layout_b972aa2_1.js"></script>
-<script type="text/javascript">!function () {
+<script type="text/javascript">
+!function () {
     require(["common:page/layout.js"], function (app) {
-
         app.initUtmOperate();
     });
 }();
 !function () {
     var we = '\u0022\u0022';
-
-
     we = JSON.parse(we);
-
     require(["passport:page/index/index.js"], function (app) {
         app.init({
             we: we
@@ -341,9 +294,6 @@
     });
 }();
 !function () {
-
-
 }();</script>
 </body>
-
 </html>

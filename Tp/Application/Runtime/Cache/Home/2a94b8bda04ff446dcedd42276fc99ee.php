@@ -1,856 +1,571 @@
-<?php if (!defined('THINK_PATH')) exit();?><!doctype html>
-<html lang="en">
+<?php if (!defined('THINK_PATH')) exit();?><!DOCTYPE html>
+<html>
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <script>
-        window._jHeadStart = ( new Date() ).getTime();
-        window.tplConf = {
-            user: {
-                userId: 'null'
-            },
-            pageKey: '',
-            autoPV: true,
-            autoIdentify: true,
-            we_renrendai_host: 'https://www.renrendai.com',
-            _isWeCom: 'false',
-            target: '_self',
-            isProduction: true,
-            pbId: ''
-        };
-    </script>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="renderer" content="webkit">
-    <meta name="google-site-verification" content="oQXrGa_mTgxg7joO0himE0QuFeqOVmm-SDC1H2dzT4c">
-    <meta name="baidu-site-verification" content="wibJopuIuI"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="keywords" content="互联网理财平台,安全理财产品,网上贷款平台,借贷平台,个人投资理财计划">
-    <meta name="description" content="人人贷理财为您提供多元化投资理财产品与更优质的综合网上贷款平台服务,将更好满足您个人投资理财计划需求。">
-    <title>【人人贷官网】专业值得信赖的网络借贷信息中介平台,互联网百强3A级信用企业</title>
-    <base href="/Tp/Public/Home/"/>
-    <link rel="shortcut icon" type="image/x-icon" href="/ps/static/common/static/img/favicon-rrd.ico"/>
-    <link rel="stylesheet" type="text/css" href="css/base_41a7e4e_1.css">
-    <script type="text/javascript">
-        (function () {
-            var userAgent = navigator.userAgent.toLowerCase();
-            if (userAgent.match(/rv:([\d.]+)\) like gecko/) || userAgent.match(/msie ([\d.]+)/)) {
-                document.write('<script src="js/babel-polyfill_1.js"><\/script>');
-            }
-        })();
-    </script>
-    <script type="text/javascript">
-        window.zhuge = window.zhuge || [];
-        window.zhuge.methods = "_init debug identify track trackLink trackForm page".split(" ");
-        window.zhuge.factory = function (b) {
-            return function () {
-                var a = Array.prototype.slice.call(arguments);
-                a.unshift(b);
-                window.zhuge.push(a);
-                return window.zhuge;
-            }
-        };
-        for (var i = 0; i < window.zhuge.methods.length; i++) {
-            var key = window.zhuge.methods[i];
-            window.zhuge[key] = window.zhuge.factory(key);
-        }
-        window.zhuge.load = function (b, x) {
-            if (!document.getElementById("zhuge-js")) {
-                var a = document.createElement("script");
-                var verDate = new Date();
-                var verStr = verDate.getFullYear().toString()
-                        + verDate.getMonth().toString() + verDate.getDate().toString();
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>p2p网贷平台</title>
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<base href="/Tp/Public/Home/" />
+<link href="css/common.css" rel="stylesheet" />
+<link href="css/index.css" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="script/jquery.min.js"></script>
+<script type="text/javascript" src="script/common.js"></script>
+<style>
+/*上下滚动*/
+#scrollDiv {
+    width: 400px;
+    height: 30px;
+    line-height: 30px;
+    overflow: hidden;
+}
+#scrollDiv li {
+    height: 30px;
+    padding-left: 10px;
+}
+</style>
+<script type="text/javascript">
+// 上下滚动
+function AutoScroll(obj) {
+    $(obj).find("ul:first").animate({
+        marginTop: "-25px"
+    },
+    500,
+    function() {
+        $(this).css({
+            marginTop: "0px"
+        }).find("li:first").appendTo(this);
+    });
+}
+$(document).ready(function() {
+    var myar = setInterval('AutoScroll("#scrollDiv")', 3000);
+    $("#scrollDiv").hover(function() {
+        clearInterval(myar);
+    },
+    function() {
+        myar = setInterval('AutoScroll("#scrollDiv")', 3000)
+    }); //当鼠标放上去的时候，滚动停止，鼠标离开的时候滚动开始
+});
 
-                a.type = "text/javascript";
-                a.id = "zhuge-js";
-                a.async = !0;
-                a.src = "https://www.we.com/cms/5864b0d6a24d131067ef7956/js/zhuge.js?v=" + verStr;
-                a.onerror = function () {
-                    window.zhuge.identify = window.zhuge.track = function (ename, props, callback) {
-                        if (callback && Object.prototype.toString.call(callback) === '[object Function]')callback();
-                    };
-                };
-                var c = document.getElementsByTagName("script")[0];
-                c.parentNode.insertBefore(a, c);
-                window.zhuge._init(b, x)
-            }
-        };
-        //区分线上线下上报的app key
-        var app_key = window.tplConf.isProduction ? "ee112f4bcbe648a0a0958ff03af06b2a" : "2da9e18043f74bceb761b72ca6f3ae78";
-        window.zhuge.load(app_key);
-    </script>
-    <link rel="stylesheet" href="css/common_wdg_c1db688_1.css"/>
-    <link rel="stylesheet" href="css/common_nm_aa4d4d8_1.css"/>
-    <link rel="stylesheet" href="css/home_wdg_2c34d21_1.css"/>
-    <link rel="stylesheet" href="css/index_05f62f1_1.css"/>
+
+</script>
 </head>
 <body>
-<!--[if lt IE 9]>
-<div style='border: 4px solid #FFF500; background: #FDFDC8; text-align: center; clear: both; height: 75px; position: fixed; z-index:999999999; right: 2px; bottom: 2px; left: 2px; padding:0 8px;'>
-    <div style='position: absolute; right: 3px; top: 3px; font-weight: bold;z-index:999999999'><a href='#'</div>
-    <div style='width: 740px; margin: 0 auto; text-align: left; padding: 0; overflow: hidden; color: black;'>
-        <div style='width: 675px; float: left;'>
-            <div style='font-size: 16px; font-weight: bold; margin-top: 12px;'>您使用的是已经过时的IE浏览器</div>
-            <div style='font-size: 13px; margin-top: 6px; line-height: 16px;'>为了让您在人人贷有最佳的使用体验，请升级到 <a
-                    href="http://windows.microsoft.com/en-US/internet-explorer/download-ie">最新版本IE浏览器</a>, 或者使用其他高级浏览器如
-                <a href="https://www.google.com/intl/en/chrome/browser/">Chrome(谷歌浏览器)</a> 或 <a
-                        href="http://www.mozilla.org/en-US/firefox/new">Firefox(火狐浏览器)</a></div>
-        </div>
+<header>
+  <div class="header-top min-width">
+    <div class="container fn-clear"> <strong class="fn-left">咨询热线：400-668-6698<span class="s-time">服务时间：9:00 - 18:00</span></strong>
+      <ul class="header_contact">
+        <li class="c_1"> <a class="ico_head_weixin" id="wx"></a>
+          <div class="ceng" id="weixin_xlgz" style="display: none;">
+            <div class="cnr"> <img src="images/code.png"> </div>
+            <b class="ar_up ar_top"></b> <b class="ar_up_in ar_top_in"></b> </div>
+        </li>
+        <li class="c_2"><a href="#" target="_blank" title="官方QQ" alt="官方QQ"><b class="ico_head_QQ"></b></a></li>
+        <li class="c_4"><a href="#" target="_blank" title="新浪微博" alt="新浪微博"><b class="ico_head_sina"></b></a></li>
+      </ul>
+      <ul class="fn-right header-top-ul">
+        <li> <a href="<?php echo U('Index/index');?>" class="app">返回首页</a> </li>
+        <li>
+          <div class=""><a href="<?php echo U('Register/register');?>" class="c-orange" title="免费注册">免费注册</a></div>
+        </li>
+        <li>
+          <div class=""><a href="<?php echo U('Login/login');?>" class="js-login" title="登录">登录</a></div>
+        </li>
+      </ul>
     </div>
+  </div>
+  <div class="header min-width">
+    <div class="container">
+      <div class="fn-left logo"> <a class="" href="<?php echo U('Index/index');?>"> <img src="images/logo.png"  title=""> </a> </div>
+      <ul class="top-nav fn-clear">
+        <li class="on"> <a href="<?php echo U('Index/index');?>">首页</a> </li>
+        <li> <a href="<?php echo U('Invest/invest');?>" class="">我要投资</a> </li>
+        <li> <a href="<?php echo U('Safe/safe');?>">安全保障</a> </li>
+        <li class="top-nav-safe"> <a href="<?php echo U('My/index');?>">我的账户</a> </li>
+        <li> <a href="<?php echo U('Company/index');?>">关于我们</a> </li>
+      </ul>
+    </div>
+  </div>
+</header>
+<!--banner-->
+<div class="flexslider">
+  <ul class="slides">
+    <li style="background-image: url(images/banner.jpg); width: 100%; float: left; margin-right: -100%; position: relative; opacity: 0; display: block; z-index: 1; background-position: 50% 0px; background-repeat: no-repeat no-repeat;" class=""><a href="#" target="_blank"></a></li>
+    <li style="background-image: url(images/banner.jpg); width: 100%; float: left; margin-right: -100%; position: relative; opacity: 0; display: block; z-index: 1; background-position: 50% 0px; background-repeat: no-repeat no-repeat;" class=""><a href="#" target="_blank"></a></li>
+    <li style="background-image: url(images/banner.jpg); width: 100%; float: left; margin-right: -100%; position: relative; opacity: 0; display: block; z-index: 1; background-position: 50% 0px; background-repeat: no-repeat no-repeat;" class=""><a href="#" target="_blank"></a></li>
+    <li style="background-image: url(images/banner.jpg); width: 100%; float: left; margin-right: -100%; position: relative; opacity: 0; display: block; z-index: 1; background-position: 50% 0px; background-repeat: no-repeat no-repeat;" class=""><a href="# " target="_blank"></a></li>
+    <li style="background-image: url(images/banner.jpg); width: 100%; float: left; margin-right: -100%; position: relative; opacity: 0; display: block; z-index: 1; background-position: 50% 0px; background-repeat: no-repeat no-repeat;" class=""><a href="#" target="_blank"></a></li>
+  </ul>
 </div>
-<![endif]-->
-        <img style="display: none;" src="picture/e99e0b623bec4163b3582e9ce6dad0e6.gif" />
-            <div class="wdg-werenrendai-top-header">
-    <div class="main-section">
-        <span class="tel-phone"><i class="icon-phone"></i>客服电话: 400-090-6600</span>
-        <ul class="site-nav">
-            <li class="nav-item padding-item"><a target="_blank" href="https://www.we.com" style="color: #ff711c">返回WE理财首页</a></li>
-            <li class="nav-item padding-item"><a target="_blank" href="/pc/about/rrd">关于我们</a></li>
-            <li class="nav-item padding-item"><a target="_blank" href="/pc/about/rrdHelp/help">帮助中心</a></li>
-            <li class="nav-item padding-item"><a target="_blank" href="http://bbs.we.com/">用户论坛</a></li>
-            <li class="nav-item padding-item"><i class="icon-mobile3"></i><a target="_blank" href="/pc/app-download.html">移动客户端</a></li>
-        </ul>
-    </div>
-</div>
-    <div class="wdg-werenrendai-second-header">
-    <div class="main-section current-channel-index">
-        <a href="/" class="brand-logo mt15">
-            <!--首页对logo添加h1标签-->
-            <h1 class="rrd-logo">人人贷</h1>
-        </a>
-        <ul class="site-nav">
-            <li class="channel-item active-channel"><a href="/">首页</a></li>
-            <li class="channel-item ">
-                <a href="/pc/uPlan.html">U计划</a>
-            </li>
-            <li class="channel-item "><a href="/pc/premium.html">优选计划</a></li>
-            <li class="channel-item "><a href="/pc/autoinvest.html">薪计划</a></li>
-            <li class="channel-item "><a href="/pc/loan.html">债权</a></li>
-            <li class="channel-item ">
-                <a href="/pc/college.html" target="_blank">人人学院</a>
-            </li>
-            <li class="channel-item" style="width: 144px;"><a href="/credit" target="_blank">我要借款/还款</a></li>
-            <li class="user-item fn-clear" num="">            
-                    <div class="denglu">
-                        <a target="_self" href="<?php echo U('Login/login');?>">注册</a> / <a target="_self" href="<?php echo U('Login/login');?>">登录</a>
-                    </div>          
-            </li>
-        </ul>
-    </div>
-</div>
-<div id="header-helper" style="display: none;">
-    <span id="header-helper-authenticated">
-         false 
-    </span>
-</div>
-<div class="main-content">
-    <div class="carousel">
-        <div class="car-center">
-            <div class="spot">
-                <span class="active"></span>
-
-                <span></span>
-
-                <span></span>
-
-            </div>
-            <div class="data-show">
-
-
-                <p class="desc">人人贷理财平台累计成交额超过</p>
-
-                <div class="money">
-                    <div class="money-cen">
-                        <div class="money-l">
-                            <div class="float">
-
-                                <span>3</span>
-
-                                <span>3</span>
-
-                                <span>5</span>
-
-
-                            </div>
-                        </div>
-                        <div class="money-r">亿元</div>
-                    </div>
-                </div>
-                <a class="red" target="_blank"
-                   href="/pc/passport/index/register?registerSource=web_top&wpFromPos=topHeader">注册领 480 元红包</a>
-
-                <p class="real-time">( 数据来源人人贷内部统计，实时更新 )</p>
-
-            </div>
-        </div>
-        <ul>
-
-
-            <li>
-                <a href="https://www.renrendai.com/financeplan/listPlan!detailPlan.action?cmsParam=12"
-                   target="_blank"><img src="picture/0727yxjxpc2_1.jpg" alt="优选加息"/></a>
-            </li>
-
-            <li>
-                <a href="https://www.renrendai.com/pc/uPlan.html" target="_blank"><img src="picture/xrkh0710pc_1.jpg" />
-            </li>
-            <li>
-                <a href="https://www.renrendai.com/pc/event/casket/index" target="_blank"><img src="picture/pc-banner-719_1.jpg" alt="闯关夺宝"/></a>
-            </li>
-        </ul>
-    </div>
-    <div class="newbee">
-        <div class="new-center">
-            <ul>
-                <li>
-                    <a href="/pc/event/increasetrust/increasetrust#ping" target="_blank">
-                        <img src="picture/newbee_1_c04c041_1.png"/>
-
-                        <div class="label-box">
-                            <em>银行存管</em>
-
-                            <p class="label-desc">交易资金通过民生银行流转</br>避免挪用资金、卷款跑路</p>
-                        </div>
-                        <i></i>
-                    </a>
-                </li>
-                <li>
-                    <a href="/pc/event/increasetrust/increasetrust#blank" target="_blank">
-                        <img src="picture/newbee_2_cd4f2a7_1.png"/>
-
-                        <div class="label-box">
-                            <em>利益保障</em>
-
-                            <p class="label-desc">借款人资质经三重审核</br>用户利益保障机制，保证金超5.45亿</p>
-                        </div>
-                        <i></i>
-                    </a>
-                </li>
-                <li>
-                    <a href="/pc/home/platform/dataOverview" target="_blank">
-                        <img src="picture/newbee_3_3d5c57e_1.png"/>
-
-                        <div class="label-box">
-                            <em>数据披露</em>
-
-                            <p class="label-desc">累计投资人总数492,119</br>90天以上累计逾期率仅0.19%
-                                <span class="icon-we-tip-info"></span>
-                            <span class="tip-box">
-                                <span class="triangle"></span>
-                                截至统计时点，逾期90天以上（不含90天）的金额逾期率
-                            </span>
-                            </p>
-                        </div>
-                    </a>
-                </li>
-            </ul>
-            <p class="header-data-tips">
-                数据截止至2017年7月31日，来源于人人贷内部统计；以上信息均为renrendai.com平台信息
-            </p>
-            <div class="notice" name="">
-                <div class="list">
-                    <div class="notice-l">
-                        <img src="picture/horn_e5fead8_1.png"/>
-                        <p>
-                            <span>关于中信银行系统升级维护公告</span>
-                            <em>2017-08-04</em>
-                        </p>
-                    </div>
-                    <div class="notice-r hover">
-
-                        <a class="tu" href="/pc/about/rrd/list/flag/pa/page/1" target="_blank">
-                            <img src="picture/more_1_c39c4fa_1.png"/>
-                        </a>
-                        <a class="zi" href="/pc/about/rrd/list/flag/pa/page/1" target="_blank">查看更多</a>
-                    </div>
-                </div>
-                <div class="info"></div>
-            </div>
-        </div>
-    </div>
-    <div class="novice">
-        <div class="novice-top">
-            <div class="no-top-l">
-                <span>新手专区</span>
-                <i></i>
-                <em>新手投资 专享通道</em>
-            </div>
-            <div class="no-top-r hover">
-                <a class="tu" href="/pc/newUser.html"><img src="picture/more_1_c39c4fa_1.png"/></a>
-                <a class="zi" href="/pc/newUser.html">查看更多</a>
-            </div>
-        </div>
-        <div class="novice-bot">
-            <div class="reward">
-                <a class="new-bee-img" href="/pc/passport/index/register?Source=web_top"><img
-                        src="picture/pc_sy_5.01_1.png"/></a>
-            </div>
-            <ul>
-                <!---->
-                <!--<li class="newbee-hover">-->
-                <!--<a class="cover" href="https://www.renrendai.com/financeplan/14529" target="_blank">-->
-                <!--<p class="time">-->
-                <!--<span class="month"><img src="picture/time.png"/><em>1个月</em></span>-->
-                <!--<img class="xian" src="picture/xian.png"/>-->
-                <!--</p>-->
-                <!--<p class="rate">-->
-                <!--<span class="num"><i>10.0</i><em>%</em></span>-->
-                <!--<span class="nian">预期年化利率</span>-->
-                <!--<span class="new">新手专享 限量发布</span>-->
-                <!--<span class="highest">最高可投10,000元</span>-->
-                <!--</p>-->
-                <!--<p class="name">-->
-                <!--<span>U计划</span>-->
-                <!--<i></i>-->
-                <!---->
-                <!--<em>立即加入</em>-->
-                <!---->
-                <!--</p>-->
-                <!--</a>-->
-                <!--</li>-->
-                <!---->
-                <li class="newbee-hover newbee-hover-single">
-                    <a href="https://www.renrendai.com/pc/uplan/14529.html" target="_blank">
-                        <div class="data">
-                            <div class="percent">
-                                <span class="rate">10.0<i>%</i></span>
-
-                                <div class="text">预期年化利率</div>
-                            </div>
-                            <div class="limit">
-                                <span>1个月</span>
-
-                                <div class="text">投资期限</div>
-                            </div>
-                            <div class="money">
-                                <span>10,000元</span>
-
-                                <div class="text">最高可投</div>
-                            </div>
-                        </div>
-                        <div class="badge">
-                            <span class="new">新手专享 限量发布</span>
-                        </div>
-                        <div class="link">
-                            <span>U计划</span>
-                            <i></i>
-
-                            <em>立即加入</em>
-
-                        </div>
-                    </a>
-                </li>
-
-            </ul>
-        </div>
-    </div>
-    <div class="fund-container premium-container salary">
-        <div class="caption clearfix" style="padding-top: 35px;">
-            <div class="l-title">
-                <div>优选计划</div>
-                <img src="picture/slice_1694fb4_1.png"/>
-                <span>越投越自由</span>
-            </div>
-        </div>
-        <div class="plan clearfix">
-            <div class="p-rate">
-                <div>8.8<span class="percent">%</span><span class="increase-interest">+0.4%</span></div>
-                <div class="b-text">预期年化利率</div>
-            </div>
-            <div class="p-month">
-                <div class="t-text">12个月</div>
-                <div class="b-text">期限</div>
-            </div>
-            <div class="p-title">
-                <div class="p-title-text">到期后转入自由期，仍享9.2%</div>
-            </div>
-            <div class="p-join pt12">
-
-                <a href="https://www.renrendai.com/pc/uplan/14415.html" target="_blank" onclick="return false">立即加入</a>
-            </div>
-        </div>
-    </div>
-    <div class="uplan">
-        <div class="novice-top">
-            <div class="no-top-l">
-                <span>U计划</span>
-                <i></i>
-                <em>定期投资 分散投标</em>
-            </div>
-            <div class="no-top-r hover">
-                <a class="tu" href="/pc/uPlan.html"><img src="picture/more_1_c39c4fa_1.png"/></a>
-                <a class="zi" href="/pc/uPlan.html">查看更多</a>
-            </div>
-        </div>
-        <div class="uplan-list-less">
-            <ul>
-                <li>
-                    <a class="cover" href="https://www.renrendai.com/pc/uplan/14469.html" target="_blank">
-                        <p class="time">
-                            <span class="month"><img src="picture/time_53c7a37_1.png"/><em>1个月</em></span>
-                            <img src="picture/uplan_xian_f5e9d9a_1.png" class="xian">
-                        </p>
-                        <p class="rate mtop">
-                            <span class="num"><i class="fu">6.0</i><em>%</em></span>
-                            <span class="nian">预期年化利率</span>
-                            <span class="highest"></span>
-                        </p>
-                        <p class="name">
-                            <em><i></i>查看详情</em>
-                        </p>
-                    </a>
-                </li>
-                <li>
-                    <a class="cover" href="https://www.renrendai.com/pc/uplan/14470.html" target="_blank">
-                        <p class="time">
-                            <span class="month"><img src="picture/time_53c7a37_1.png"/><em>3个月</em></span>
-                            <img src="picture/uplan_xian_f5e9d9a_1.png" class="xian">
-                        </p>
-                        <p class="rate mtop">
-                            <span class="num"><i class="fu">6.6</i><em>%</em></span>
-                            <span class="nian">预期年化利率</span>
-                            <span class="highest"></span>
-                        </p>
-                        <p class="name">
-                            <em><i></i>查看详情</em>
-                        </p>
-                    </a>
-                </li>
-                <li>
-                    <a class="cover" href="https://www.renrendai.com/pc/uplan/14471.html" target="_blank">
-                        <p class="time">
-                            <span class="month"><img src="picture/time_53c7a37_1.png"/><em>6个月</em></span>
-                            <img src="picture/uplan_xian_f5e9d9a_1.png" class="xian">
-                        </p>
-
-                        <p class="rate mtop">
-
-                            <span class="num"><i class="fu">7.2</i><em>%</em></span>
-
-                            <span class="nian">预期年化利率</span>
-
-                            <span class="highest"></span>
-                        </p>
-
-                        <p class="name">
-                            <em><i></i>查看详情</em>
-
-                        </p>
-                    </a>
-                </li>
-
-                <li>
-                    <a class="cover" href="https://www.renrendai.com/pc/uplan/14472.html" target="_blank">
-                        <p class="time">
-                            <span class="month"><img src="picture/time_53c7a37_1.png"/><em>12个月</em></span>
-                            <img src="picture/uplan_xian_f5e9d9a_1.png" class="xian">
-                        </p>
-
-                        <p class="rate mtop">
-
-                            <span class="num"><i class="fu">8.8</i><em>%</em></span>
-
-                            <span class="nian">预期年化利率</span>
-
-                            <span class="highest"></span>
-                        </p>
-
-                        <p class="name">
-
-
-                            <em><i></i>立即加入</em>
-
-                        </p>
-                    </a>
-                </li>
-
-                <li>
-                    <a class="cover" href="https://www.renrendai.com/pc/uplan/14473.html" target="_blank">
-                        <p class="time">
-                            <span class="month"><img src="picture/time_53c7a37_1.png"/><em>24个月</em></span>
-                            <img src="picture/uplan_xian_f5e9d9a_1.png" class="xian">
-                        </p>
-
-                        <p class="rate mtop">
-
-                            <span class="num"><i class="fu">9.8</i><em>%</em><i class="dan">+0.2</i><em>%</em></span>
-
-                            <span class="nian">预期年化利率</span>
-
-                            <span class="highest"></span>
-                        </p>
-
-                        <p class="name">
-
-
-                            <em><i></i>立即加入</em>
-
-                        </p>
-                    </a>
-                </li>
-            </ul>
-        </div>
-    </div>
-    <div class="home-container">
-        <div class="fund-container salary-container salary">
-            <div class="caption clearfix">
-                <div class="l-title">
-                    <div>薪计划</div>
-                    <img src="picture/slice_1694fb4_1.png"/>
-                    <span>每月定投 积少成多</span>
-                </div>
-
-                <a class="r-more" href="/pc/autoinvest.html">
-                    <span class="more-link">查看更多</span>
-                    <img class="more-bg" src="picture/more_1_c39c4fa_1.png"/>
-                </a>
-
-            </div>
-            <div class="plan clearfix">
-                <div class="p-rate">
-                    <div>8<span class="percent">%</span></div>
-                    <div class="b-text">预期年化利率</div>
-                </div>
-                <div class="p-start">
-                    <div class="t-text">每月500元</div>
-                    <div class="b-text">投资起点</div>
-                </div>
-                <div class="p-month">
-                    <div class="t-text">12个月</div>
-                    <div class="b-text">投资期限</div>
-                </div>
-                <div class="p-day">
-                    <div class="t-text">4日</div>
-                    <div class="b-text">每月投资日</div>
-                </div>
-                <div class="p-join">
-
-                    <a href="https://www.renrendai.com/pc/autoinvest/20558.html" target="_blank" onclick="return false">立即加入</a>
-
-                    <div class="b-text">剩余名额:165人</div>
-                </div>
-            </div>
-        </div>
-
-        <a class="invite-friend" href="/pc/event/invitefriends/invitefriends" target="_blank">
-            <img src="picture/invite_1.png" alt=""/>
-        </a>
-
-        <div class="fund-wrap regular-container debt-container">
-            <div class="caption clearfix">
-                <div class="l-title">
-                    <div>散标/债权</div>
-                    <img src="picture/slice_1694fb4_1.png"/>
-                    <span>自主投资 期限灵活</span>
-                </div>
-
-                <a class="r-more" href="/pc/loan.html">
-                    <span class="more-link">查看更多</span>
-                    <img class="more-bg" src="picture/more_1_c39c4fa_1.png"/>
-                </a>
-
-            </div>
-            <div class="table">
-                <table class="t-caption">
-                    <thead>
-                    <tr>
-                        <th class="rate regular-rate">年利率</th>
-                        <th class="name">借款标题</th>
-                        <th class="time">期限</th>
-                        <th class="money">金额</th>
-                        <th class="progress">募集进度</th>
-                        <th class="action">操作</th>
-                    </tr>
-                    </thead>
-                    <tbody class="data-list">
-
-                    <tr class="even">
-                        <td class="rate">10.20<span>%</span></td>
-                        <td class="name">日常生活消费</td>
-                        <td class="time">36个月</td>
-                        <td class="money"><span>147,500.00</span>元</td>
-                        <td class="progress" data-percent="100">
-                            <div class="percentage-text">0%</div>
-                            <div class="outer"><span class="inner"></span></div>
-                        </td>
-                        <td class="action">
-
-                            <a class="disabled" href="https://www.renrendai.com/pc/loan/2242286.html" target="_blank"
-                               onclick="return false">已满标</a>
-
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="rate">10.20<span>%</span></td>
-                        <td class="name">装修</td>
-                        <td class="time">36个月</td>
-                        <td class="money"><span>101,000.00</span>元</td>
-                        <td class="progress" data-percent="100">
-                            <div class="percentage-text">0%</div>
-                            <div class="outer"><span class="inner"></span></div>
-                        </td>
-                        <td class="action">
-
-                            <a class="disabled" href="https://www.renrendai.com/pc/loan/2242184.html" target="_blank"
-                               onclick="return false">已满标</a>
-
-                        </td>
-                    </tr>
-
-                    <tr class="even">
-                        <td class="rate">10.20<span>%</span></td>
-                        <td class="name">资金周转</td>
-                        <td class="time">36个月</td>
-                        <td class="money"><span>191,500.00</span>元</td>
-                        <td class="progress" data-percent="100">
-                            <div class="percentage-text">0%</div>
-                            <div class="outer"><span class="inner"></span></div>
-                        </td>
-                        <td class="action">
-
-                            <a class="disabled" href="https://www.renrendai.com/pc/loan/2242176.html" target="_blank"
-                               onclick="return false">已满标</a>
-
-                        </td>
-                    </tr>
-
-                    <tr>
-                        <td class="rate">10.20<span>%</span></td>
-                        <td class="name">资金周转</td>
-                        <td class="time">36个月</td>
-                        <td class="money"><span>144,000.00</span>元</td>
-                        <td class="progress" data-percent="100">
-                            <div class="percentage-text">0%</div>
-                            <div class="outer"><span class="inner"></span></div>
-                        </td>
-                        <td class="action">
-
-                            <a class="disabled" href="https://www.renrendai.com/pc/loan/2242173.html" target="_blank"
-                               onclick="return false">已满标</a>
-
-                        </td>
-                    </tr>
-
-                    </tbody>
-                </table>
-            </div>
-        </div>
-    </div>
-</div>
-            <div class="werenrendai-footer">
-    <div class="footer-center">
-        <div class="friend-link">
-            <div class="f-l-l">友情链接</div>
-            <div class="f-l-r">
-                <ul>
-                    <li class="fn-left">
-                        <a class="gray" target="_blank" href="/pc/college.html">人人学院</a>
-                    </li>
-                    <li class="fn-left">
-                        <a class="gray" target="_blank" href="https://www.we.com">WE理财</a>
-                    </li>
-                    <li class="fn-left">
-                        <a class="gray" target="_blank" href="/pc/uPlan.html">U计划</a>
-                    </li>
-                    <li class="fn-left">
-                        <a class="gray" target="_blank" href="http://www.ucredit.com">人人友信</a>
-                    </li>
-                    <li class="fn-left">
-                        <a class="gray" target="_blank" href="http://bbs.we.com">用户论坛</a>
-                    </li>
-                    <li class="fn-left">
-                        <a class="gray" target="_blank" href="/pc/autoinvest.html">薪计划</a>
-                    </li>
-                    <li class="fn-left">
-                        <a class="gray" target="_blank" href="/pc/loan.html">债权</a>
-                    </li>
-                </ul>
-                <!--<span class="sanjiao icon-show"><i></i></span>-->
-            </div>
-        </div>
-        <div class="introduce" style="display: none;">
-            <ul class="fn-clear">
-                <li class="fn-left">
-                    <a class="gray" target="_blank" href="/about/about.action?flag=contact">联系我们</a>
-                </li>
-            </ul>
-        </div>
-        <div class="introduce">
-            <ul class="fn-clear icons">
-                <li class="fn-left">
-                    客户服务
-                </li>
-                <li class="fn-left"><a id="wexinBtn" class="gray" href="javascript:;" tabindex="-1">
-                    微信</a></li>
-                <li class="fn-left"><a class="gray" target="_blank" rel="external nofollow" href="http://e.weibo.com/renrendai?ref=http%3A%2F%2Fwww.renrendai.com%2F">新浪微博</a></li>
-                <li class="fn-left"><a class="gray cursor-pointer" rel="external nofollow" target="_blank" onclick="online_service();">在线客服</a></li>
-            </ul>
-        </div>
-        <div class="desc">
-            <span class="up-line"></span>
-            <span class="down-line"></span>
-            <div class="d-l">
-                <p class="first">© <span class="year">2017</span> 人人贷商务顾问(北京)有限公司 All rights reserved </p>
-                <p class="gray"><span>京ICP证 100953号</span> <span style="display:inline-block;text-decoration:none;height:20px;line-height:20px;">京公网安备 11010802021944</span> 京ICP备12025643号-1</p>
-                <p>人人贷商务顾问(北京)有限公司: 市场有风险  投资需谨慎  座机号码 010-53232880</p>
-            </div>
-            <div class="d-c">
-                <div class="d-c-wx"><img src="picture/we-weixing_10afe11_1.png" alt="人人贷微信公众号"/></div>
-                <div class="d-c-app"><img src="picture/app-weixin_e175ae1_1.png" alt="人人贷app下载"/></div>
-            </div>
-            <div class="d-r">
-                <div class="phone">400-090-6600</div>
-                <div class="time">服务时间: 9:00-21:00</div>
-            </div>
-        </div>
-        <div class="img-show">
-            <a rel="external nofollow" class="ui-footer-verification-item fn-left trust" id="kx_verify" href="https://ss.knet.cn/verifyseal.dll?sn=e13042311010040288j4wq000000&ct=df&a=1&pa=931969"title="人人贷已通过中网权威数据库对比，获得“可信网站”身份验证，您可放心使用。"  target="_blank">
-            </a>
-            <a rel="external nofollow" class="ui-footer-verification-item fn-left internet" href="http://si.trustutn.org/info?sn=881141203000033878231" title="人人贷已通过认证联盟权威数据库对比，获得“互联网金融行业认证”，您可放心使用。" target="_blank"></a>
-            <a rel="external nofollow" class="ui-footer-verification-item fn-left itrust" title="人人贷已经成为中国互联网信用评价中心网络诚信联盟成员，并且完成企业信用评级 " href="http://www.itrust.org.cn/home/index/itrust_certifi/wm/2554879344" target="_blank"></a>
-            <a rel="external nofollow" class="ui-footer-verification-item fn-left customer" title="人人贷获评12315.com客户满意度测评中心最高等级满意度" href="http://www.itrust.org.cn/home/index/satification_certificate/wm/MY2017061202" target="_blank"></a>
-            <a rel="external nofollow" class="ui-footer-verification-item fn-left copper" title="人人贷已经完成在公安机关的信息备案，您可了解网站相关备案信息。" href="http://gawa.bjchy.gov.cn/websearch/" target="_blank" ></a>
-            <!--<a class="ui-footer-verification-item fn-left certificate" title="人人贷已经完成在北京市工商局网站备案，您可了解网站相关备案信息。" href="http://www.hd315.gov.cn/beian/view.asp?bianhao=010202013052900002" target="_blank" ></a>-->
-            <a rel="external nofollow" class="ui-footer-verification-item fn-left hundred" title="人人贷为AAA级信用企业的互联网百强企业证书。" href="http://www.we.com/cms/5788c3322fc6cb3b46b9e7e2/common/footer/2016%E5%B9%B4%E4%BA%92%E8%81%94%E7%BD%91%E7%99%BE%E5%BC%BA%E4%BC%81%E4%B8%9A-%E8%AF%81%E4%B9%A6.pdf" target="_blank" ></a>
-            <a rel="external nofollow" class="ui-footer-verification-item fn-left norton" title="人人贷已引入VeriSign SSL加密技术，您的隐私及个人资料安全已受最高级别的保护。" href="https://trustsealinfo.websecurity.norton.com/splash?form_file=fdf/splash.fdf&dn=renrendai.com&lang=zh_cn" target="_blank" ></a>
-
-        </div>
-    </div>
-</div>
-<div class="fixed-download-link">
-    <div class="download-link-wrap">
-        <a class="calc" href="/pc/calculator/prodType/Loanplan" target="_blank">
-            <img src="picture/calc_7165130_1.png"/>
-
-            <div class="hover">收益计算</div>
-        </a>
-        <a class="help" onclick="online_service();" href="javascript:;">
-            <img src="picture/help_9d76e33_1.png"/>
-
-            <div class="hover">在线客服</div>
-        </a>
-        <a class="download">
-            <img src="picture/download_c30dbfb_1.png"/>
-
-            <div class="hover">下载APP</div>
-        </a>
-        <a class="top">
-            <img src="picture/arrow_fbf4659_1.png" alt=""/>
-        </a>
-    </div>
-    <div class="app-link-wrap">
-        <img class="qrcode" src="picture/qrcode_c0a844e_1.png" alt=""/>
-
-        <div class="link">
-            <div class="text">人人贷理财APP下载</div>
-            <a rel="external nofollow" href="https://itunes.apple.com/us/app/id883561142?mt=8" target="_blank"
-               class="ios">iOS版</a>
-            <a href="/event/download.action?type=apk" target="_blank" class="android">Android版</a>
-        </div>
-    </div>
-</div>
-
-<div class="fn-hide">
-    <div id="weixin-content" class="p20 text-center">
-        <img src="picture/weixin_rrd_5b83f9c_1.jpg" style="width:250px"/>
-
-        <p>微信扫一扫，人人贷理财里动态全知道！</p>
-    </div>
-</div>
-
-
-<script type='text/javascript'>
-    function online_service() {
-        window.open('http://chat.looyuoms.com/chat/chat/p.do?c=20000293&f=10042100&g=10048378&site=5372&r=%23params%3A姓名%2C游客', '_blank', 'height=544, width=644,toolbar=no,scrollbars=no,menubar=no,status=no');
-    }
-
-</script>
-
-
+<script src="script/jquery.flexslider-min.js"></script>
 <script>
-    /*
-     var _hmt = _hmt || [];
-     (function() {
-     var hm = document.createElement("script");
-     //we，rerendai使用不同的百度统计代码
-     if(window.tplConf._isWeCom == 'true'){
-     hm.src = "//hm.baidu.com/hm.js?16f9bb97b83369e62ee1386631124bb1";
-     }else{
-     hm.src = "https://hm.baidu.com/hm.js?a00f46563afb7c779eef47b5de48fcde";
-     }
-     var s = document.getElementsByTagName("script")[0];
-     s.parentNode.insertBefore(hm, s);
-     })();
-     */
-
-    //ga统计
-    (function (i, s, o, g, r, a, m) {
-        i['GoogleAnalyticsObject'] = r;
-        i[r] = i[r] || function () {
-            (i[r].q = i[r].q || []).push(arguments)
-        }, i[r].l = 1 * new Date();
-        a = s.createElement(o),
-                m = s.getElementsByTagName(o)[0];
-        a.async = 1;
-        a.src = g;
-        m.parentNode.insertBefore(a, m)
-    })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
-    ga('create', 'UA-93150356-1', 'auto');
-    ga('send', 'pageview');
+$(function(){
+    $('.flexslider').flexslider({
+        directionNav: true,
+        pauseOnAction: false
+    });
+    //产品列表滚动
+    var pLength = $('.pListContentBox > li').length;
+    var cishu = pLength-4;
+    var n = 0;
+    $('.pListContentBox').css({'width':pLength*245+'px'});
+    if(pLength>4){
+        $('.pListRight').addClass('curr');
+    }
+    $('.pListRight').on('click',function(){
+        if(cishu>0){
+            //alert('1');
+            n++;
+            cishu--;
+            $('.pListContentBox').animate({'left':'-'+n*244+'px'},500);
+            if(cishu==0){
+                $('.pListRight').removeClass('curr');
+            }
+            if(n>0){
+                $('.pListLeft').addClass('curr');
+            }
+        }
+    });
+    $('.pListLeft').on('click',function(){
+        if(n>0){
+            n--;
+            cishu++;
+            $('.pListContentBox').animate({'left':'-'+n*244+'px'},500);
+            if(n==0){
+                $('.pListLeft').removeClass('curr');
+            }
+            if(cishu>0){
+                $('.pListRight').addClass('curr');
+            }
+        }
+    });
+    //alert(pLength);
+});
 </script>
-<script type="text/javascript" src="js/mod_f76e019_1.js"></script>
-<script type="text/javascript" src="js/common_nm_c1e2e2f_1.js"></script>
-<script type="text/javascript" src="js/common_wdg_aa3b670_1.js"></script>
-<script type="text/javascript" src="js/home_wdg_c85ad5b_1.js"></script>
-<script type="text/javascript" src="js/index_3b158a0_1.js"></script>
-<script type="text/javascript" src="js/layout_b972aa2_1.js"></script>
-<script type="text/javascript">!function () {
-    require(["common:page/layout.js"], function (app) {
+<!--注册登陆模块-->
+<!--<div class="login_float">
+  <div class="index_login">
+    <div class="login_name">亿人宝年化收益率</div>
+    <div class="login_num">10<font>%</font>~17<font>%</font></div>
+    <div class="login_info"> <span class="login_info1"><font>3~4倍</font>定期存款收益</span> <span class="login_info2"><font>30倍</font>活期存款收益</span> </div>
+    <div class="clear"></div>
+    <div class="login_btn"><a href="register.html">立即注册</a></div>
+    <p class="login_reg">已有账号，<a href="login.html">立即登录</a></p>
+  </div>
+</div>-->
+<script type="text/javascript">
+var gaintop;
+$(function(){
+    gaintop = $(".login_float").css("top");
+    $(".login_float").css("top",-695);
+    $(".login_float").show();
+    $(".login_float").animate({top: gaintop,opacity:1},800);
+    $(".login_float").animate({top: '-=12px',opacity:1},200);
+    $(".login_float").animate({top: gaintop,opacity:1},200);
+    $(".login_float").animate({top: '-=6px',opacity:1},200);
+    $(".login_float").animate({top: gaintop,opacity:1},200);
+    $(".login_float").animate({top: '-=2px',opacity:1},100);
+    $(".login_float").animate({top: gaintop,opacity:1},100);
+});
 
-        app.initUtmOperate();
-    });
-}();
-!function () {
-    require(["common:widget/werenrendai-home/second-header/second-header"], function (header) {
-        header.init();
-    });
-}();
-!function () {
-    require(["common:widget/werenrendai-home/footer/footer"], function () {
-    });
-}();
-!function () {
-    var trade = '{u0022tradeTimesu0022:u00224,537u0022,u0022earnedAmountu0022:u002233u0022,u0022tradeAmountu0022:[u00223u0022,u00223u0022,u00225u0022],u0022userTotalCountu0022:4486280}';
-    var article = '{u0022bodyu0022:u0022u003Cp styleu003Du005Cu0022lineu002Dheight: 32pxu003Bverticalu002Dalign: baselineu003Bbackground: whiteu005Cu0022u003Eu003Cspan styleu003Du005Cu0022fontu002Dfamily: 微软雅黑, sansu002Dserifu005Cu0022u003E尊敬的人人贷理财用户：u003C/spanu003Eu003C/pu003Eu003Cp styleu003Du005Cu0022lineu002Dheight: 32pxu003Bverticalu002Dalign: baselineu003Bbackground: whiteu005Cu0022u003Eu003Cspan styleu003Du005Cu0022fontu002Dfamily: 微软雅黑, sansu002Dserifu005Cu0022u003Eu0026nbspu003Bu003C/spanu003Eu003C/pu003Eu003Cp styleu003Du005Cu0022lineu002Dheight: 32pxu003Bverticalu002Dalign: baselineu003Bbackground: whiteu005Cu0022u003Eu003Cspan styleu003Du005Cu0022fontu002Dfamily: 微软雅黑, sansu002Dserifu005Cu0022u003E您好！由于银行进行系统升级维护，在此期间您将无法使用以下银行卡进行充值：u003C/spanu003Eu003C/pu003Eu003Cp styleu003Du005Cu0022textu002Dindent: 28pxu003Blineu002Dheight: 32pxu003Bverticalu002Dalign: baselineu003Bbackground: whiteu005Cu0022u003Eu003Cspan styleu003Du005Cu0022fontu002Dfamily: 微软雅黑, sansu002Dserifu005Cu0022u003Eu0026nbspu003Bu003C/spanu003Eu003C/pu003Eu003Cp styleu003Du005Cu0022lineu002Dheight: 32pxu003Bverticalu002Dalign: baselineu003Bbackground: whiteu005Cu0022u003Eu003Cstrongu003Eu003Cspan styleu003Du005Cu0022fontu002Dfamily: 微软雅黑, sansu002Dserifu005Cu0022u003E中信银行：u003C/spanu003Eu003C/strongu003Eu003Cspan styleu003Du005Cu0022fontu002Dfamily: 微软雅黑, sansu002Dserifu005Cu0022u003E2017u003C/spanu003Eu003Cspan styleu003Du005Cu0022fontu002Dfamily: 微软雅黑, sansu002Dserifu005Cu0022u003E年8月5日17:30至8月6日7:00u003C/spanu003Eu003C/pu003Eu003Cp styleu003Du005Cu0022marginu002Dtop:5pxu003Bmarginu002Dright:0u003Bmarginu002Dbottom:5pxu003Bmarginu002Dleft: 0u003Blineu002Dheight:32pxu003Bbackground:whiteu003Bverticalu002Dalign:baselineu005Cu0022u003Eu003Cspan styleu003Du005Cu0022fontu002Dsize: 14pxu003Bfontu002Dfamily: 微软雅黑, sansu002Dserifu005Cu0022u003Eu0026nbspu003Bu003C/spanu003Eu003C/pu003Eu003Cp styleu003Du005Cu0022marginu002Dtop:5pxu003Bmarginu002Dright:0u003Bmarginu002Dbottom:5pxu003Bmarginu002Dleft: 0u003Blineu002Dheight:32pxu003Bbackground:whiteu003Bverticalu002Dalign:baselineu005Cu0022u003Eu003Cspan styleu003Du005Cu0022fontu002Dsize:14pxu003Bfontu002Dfamily:u0026#39u003B微软雅黑u0026#39u003B,u0026#39u003Bsansu002Dserifu0026#39u003Bu003Bborder:none windowtext 1pxu003Bpadding:0u005Cu0022u003E请您合理安排交易时间，由此给您带来的不便，敬请谅解！如您有任何疑问请联系在线客服或拨打客服热线：400u002D090u002D6600。u003C/spanu003Eu003C/pu003Eu003Cp styleu003Du005Cu0022lineu002Dheight: 32pxu003Bverticalu002Dalign: baselineu003Bbackground: whiteu005Cu0022u003Eu003Cspan styleu003Du005Cu0022fontu002Dfamily: 微软雅黑, sansu002Dserifu005Cu0022u003Eu0026nbspu003Bu0026nbspu003Bu0026nbspu003Bu0026nbspu003Bu0026nbspu003Bu0026nbspu003Bu0026nbspu003Bu0026nbspu003Bu0026nbspu003Bu0026nbspu003Bu0026nbspu003Bu0026nbspu003Bu0026nbspu003Bu0026nbspu003Bu0026nbspu003Bu0026nbspu003Bu0026nbspu003Bu0026nbspu003Bu0026nbspu003Bu0026nbspu003Bu0026nbspu003Bu0026nbspu003Bu0026nbspu003Bu0026nbspu003Bu0026nbspu003Bu0026nbspu003Bu0026nbspu003Bu0026nbspu003Bu0026nbspu003Bu0026nbspu003Bu0026nbspu003Bu0026nbspu003Bu0026nbspu003Bu0026nbspu003Bu0026nbspu003Bu0026nbspu003Bu0026nbspu003Bu0026nbspu003Bu0026nbspu003Bu0026nbspu003Bu0026nbspu003Bu0026nbspu003Bu0026nbspu003Bu0026nbspu003Bu0026nbspu003Bu0026nbspu003Bu0026nbspu003Bu0026nbspu003Bu0026nbspu003Bu0026nbspu003Bu0026nbspu003Bu0026nbspu003Bu0026nbspu003Bu0026nbspu003Bu0026nbspu003Bu0026nbspu003Bu0026nbspu003Bu0026nbspu003Bu0026nbspu003Bu0026nbspu003Bu0026nbspu003Bu0026nbspu003Bu0026nbspu003Bu0026nbspu003Bu0026nbspu003Bu0026nbspu003Bu0026nbspu003Bu0026nbspu003Bu0026nbspu003Bu0026nbspu003Bu0026nbspu003Bu0026nbspu003Bu0026nbspu003Bu0026nbspu003Bu0026nbspu003Bu0026nbspu003Bu0026nbspu003Bu0026nbspu003Bu0026nbspu003Bu0026nbspu003Bu0026nbspu003Bu0026nbspu003Bu0026nbspu003Bu0026nbspu003Bu0026nbspu003Bu0026nbspu003Bu0026nbspu003Bu0026nbspu003Bu0026nbspu003Bu0026nbspu003Bu0026nbspu003Bu0026nbspu003Bu0026nbspu003Bu0026nbspu003Bu0026nbspu003Bu0026nbspu003Bu0026nbspu003Bu0026nbspu003Bu0026nbspu003Bu0026nbspu003Bu0026nbspu003Bu0026nbspu003Bu0026nbspu003Bu0026nbspu003Bu0026nbspu003Bu0026nbspu003Bu0026nbspu003Bu0026nbspu003Bu0026nbspu003Bu0026nbspu003Bu0026nbspu003Bu0026nbspu003Bu0026nbspu003Bu0026nbspu003Bu0026nbspu003Bu0026nbspu003Bu0026nbspu003Bu0026nbspu003B u0026nbspu003Bu0026nbspu003Bu0026nbspu003Bu0026nbspu003Bu0026nbspu003Bu0026nbspu003Bu0026nbspu003Bu0026nbspu003Bu0026nbspu003Bu0026nbspu003Bu0026nbspu003Bu0026nbspu003Bu0026nbspu003Bu0026nbspu003Bu0026nbspu003Bu0026nbspu003Bu0026nbspu003Bu0026nbspu003B u0026nbspu003Bu003C/spanu003Eu003C/pu003Eu003Cp styleu003Du005Cu0022textu002Dalign:rightu003Blineu002Dheight:32pxu003Bbackground:whiteu003Bverticalu002Dalign:baselineu005Cu0022u003Eu003Cspan styleu003Du005Cu0022fontu002Dfamily: 微软雅黑, sansu002Dserifu005Cu0022u003E人人贷商务顾问（北京）有限公司u003C/spanu003Eu003C/pu003Eu003Cp styleu003Du005Cu0022textu002Dalign: rightu003B lineu002Dheight: 32pxu003B verticalu002Dalign: baselineu003B background: whiteu003Bu005Cu0022u003Eu003Cspan styleu003Du005Cu0022fontu002Dfamily: 微软雅黑, sansu002Dserifu005Cu0022u003E2017u003C/spanu003Eu003Cspan styleu003Du005Cu0022fontu002Dfamily: 微软雅黑, sansu002Dserifu005Cu0022u003E年08月04日u003C/spanu003Eu003C/pu003Eu0022,u0022expireTimeu0022:u0022u0022,u0022noticeTimeu0022:u00222017u002D08u002D04u0022,u0022titleu0022:u0022关于中信银行系统升级维护公告u0022}';
-    var exchange = '[{u0022actualAmountu0022:u0022200000.00u0022,u0022annualRateu0022:u00224.00u0022,u0022appendAmountu0022:u00221000.00u0022,u0022contractIdu0022:u0022nanjing20160629u0022,u0022endInterestDateu0022:u002220160804u0022,u0022incomeTypeu0022:u0022非保本预期u0022,u0022nowTimeu0022:u00221501847740466u0022,u0022originIssueru0022:u0022南京金融资产交易中心u0022,u0022productDescu0022:u0022本产品所募集资金投资于国内知名的大型金融机构所发行的金融产品u0022,u0022productNameu0022:u0022安盈计划u002D30天u002DNJ160630u002D01u0022,u0022productNou0022:u0022EX20160629214635001001u0022,u0022productPeriodu0022:u002230u0022,u0022profitDescu0022:u0022本产品约定年化收益率为4%，实际收益率以产品到期结算收益为准。本产品自发行日(2016年7月5日)起计息，根据投资人持有产品的实际天数计算收益，产品到期日不计息。本产品认购期间内(2016年6月30日u002D2016年7月4日)认购资金不计息。u0022,u0022projectSourceu0022:u0022南京金融资产交易中心u0022,u0022repayTextu0022:u0022到期一次性回收本金及收益u0022,u0022startAmountu0022:u00221,000.00u0022,u0022startSellingTimeu0022:u00221467252000000u0022,u0022statusu0022:u00226u0022,u0022tagu0022:u0022u0022,u0022totalAmountu0022:u0022200000.00u0022},{u0022actualAmountu0022:u0022200000.00u0022,u0022annualRateu0022:u00224.00u0022,u0022appendAmountu0022:u00221000.00u0022,u0022contractIdu0022:u0022nanjing20160629u0022,u0022endInterestDateu0022:u002220160804u0022,u0022incomeTypeu0022:u0022非保本预期u0022,u0022nowTimeu0022:u00221501847740466u0022,u0022originIssueru0022:u0022南京金融资产交易中心u0022,u0022productDescu0022:u0022本产品所募集资金投资于国内知名的大型金融机构所发行的金融产品u0022,u0022productNameu0022:u0022安盈计划u002D30天u002DNJ160630u002D02u0022,u0022productNou0022:u0022EX20160629214635001002u0022,u0022productPeriodu0022:u002230u0022,u0022profitDescu0022:u0022本产品约定年化收益率为4%，实际收益率以产品到期结算收益为准。本产品自发行日(2016年7月5日)起计息，根据投资人持有产品的实际天数计算收益，产品到期日不计息。本产品认购期间内(2016年6月30日u002D2016年7月4日)认购资金不计息。u0022,u0022projectSourceu0022:u0022南京金融资产交易中心u0022,u0022repayTextu0022:u0022到期一次性回收本金及收益u0022,u0022startAmountu0022:u00221,000.00u0022,u0022startSellingTimeu0022:u00221467252000000u0022,u0022statusu0022:u00226u0022,u0022tagu0022:u0022u0022,u0022totalAmountu0022:u0022200000.00u0022},{u0022actualAmountu0022:u0022200000.00u0022,u0022annualRateu0022:u00224.00u0022,u0022appendAmountu0022:u00221000.00u0022,u0022contractIdu0022:u0022nanjing20160629u0022,u0022endInterestDateu0022:u002220160804u0022,u0022incomeTypeu0022:u0022非保本预期u0022,u0022nowTimeu0022:u00221501847740466u0022,u0022originIssueru0022:u0022南京金融资产交易中心u0022,u0022productDescu0022:u0022本产品所募集资金投资于国内知名的大型金融机构所发行的金融产品u0022,u0022productNameu0022:u0022安盈计划u002D30天u002DNJ160630u002D03u0022,u0022productNou0022:u0022EX20160629214635001003u0022,u0022productPeriodu0022:u002230u0022,u0022profitDescu0022:u0022本产品约定年化收益率为4%，实际收益率以产品到期结算收益为准。本产品自发行日(2016年7月5日)起计息，根据投资人持有产品的实际天数计算收益，产品到期日不计息。本产品认购期间内(2016年6月30日u002D2016年7月4日)认购资金不计息。u0022,u0022projectSourceu0022:u0022南京金融资产交易中心u0022,u0022repayTextu0022:u0022到期一次性回收本金及收益u0022,u0022startAmountu0022:u00221,000.00u0022,u0022startSellingTimeu0022:u00221467252000000u0022,u0022statusu0022:u00226u0022,u0022tagu0022:u0022u0022,u0022totalAmountu0022:u0022200000.00u0022}]';
-    var salary = '{u0022idu0022:20558,u0022nameu0022:u0022薪计划170804期u0022,u0022subpointCountPlanu0022:200,u0022subpointCountActualu0022:35,u0022statusu0022:u00221u0022,u0022lockPeriodu0022:12,u0022minRechargeAmountu0022:500,u0022maxRechargeAmountu0022:20000,u0022beginSellingTimeu0022:1501813800000,u0022introduceu0022:u0022薪计划是人人贷针对工薪族投资需求量身打造的高效自动投标工具。用户可在每月固定日期支付固定金额的出借资金（每月加入金额由初次加入时确定，后续月份不支持修改），系统对用户支付的月出借资金在用户认可的标的范围内，对符合要求的标的进行自动出借，回款本息在相应期限内再进行自动出借，锁定期限结束后通过平台债权转让系统进行转让退出。薪计划所对应的标的均100%适用于人人贷用户利益保障机制并由系统实现标的分散出借。预期收益不等于实际收益，出借人需自行承担资金出借的风险与责任；市场有风险，投资需谨慎。u0022,u0022waitTimeu0022:null,u0022processRatiou0022:17,u0022amountu0022:0,u0022earnInterestu0022:0,u0022expectedRateu0022:u00228u0022,u0022joinedu0022:false,u0022subPointIdu0022:null,u0022lastCacheTimeu0022:null,u0022reserveDateu0022:null,u0022useTimeu0022:null,u0022averageBidInterestu0022:0,u0022fundsUseRateu0022:0,u0022averageBidCountu0022:0,u0022bidCountu0022:0,u0022avalibleAmountu0022:0,u0022provinceDistu0022:null,u0022provincesu0022:0,u0022borrowCountu0022:0,u0022endDateu0022:null,u0022descriptionu0022:null,u0022restPlaceu0022:null,u0022lastInvestDayu0022:null,u0022dayOfMonthu0022:4}';
-    var fund = '[{u0022rateYearu0022:u0022u002D6.70u0022,u0022rateHalfYearu0022:u00221.01u0022,u0022riskLevelu0022:u0022高u0022,u0022minSubscriptu0022:u00221.00u0022,u0022fundCodeu0022:u0022000217u0022,u0022navu0022:u00221.0103u0022,u0022fundTypeu0022:u0022指数u0022,u0022abbrevu0022:u0022华安易富黄金ETF联接Cu0022,u0022rate7dayu0022:null,u0022profit10ku0022:null},{u0022rateYearu0022:u00223.72u0022,u0022rateHalfYearu0022:u00221.91u0022,u0022riskLevelu0022:u0022中u0022,u0022minSubscriptu0022:u0022100.00u0022,u0022fundCodeu0022:u0022519153u0022,u0022navu0022:u00221.3370u0022,u0022fundTypeu0022:u0022债权u0022,u0022abbrevu0022:u0022新华纯债添利Cu0022,u0022rate7dayu0022:null,u0022profit10ku0022:null},{u0022rateYearu0022:u002228.71u0022,u0022rateHalfYearu0022:u002215.88u0022,u0022riskLevelu0022:u0022高u0022,u0022minSubscriptu0022:u002210.00u0022,u0022fundCodeu0022:u0022001626u0022,u0022navu0022:u00221.1970u0022,u0022fundTypeu0022:u0022股票u0022,u0022abbrevu0022:u0022国泰央企改革u0022,u0022rate7dayu0022:null,u0022profit10ku0022:null},{u0022rateYearu0022:u002227.77u0022,u0022rateHalfYearu0022:u002218.05u0022,u0022riskLevelu0022:u0022高u0022,u0022minSubscriptu0022:u002210.00u0022,u0022fundCodeu0022:u0022001074u0022,u0022navu0022:u00221.0905u0022,u0022fundTypeu0022:u0022混合u0022,u0022abbrevu0022:u0022华泰柏瑞量化驱动u0022,u0022rate7dayu0022:null,u0022profit10ku0022:null}]';
-    var debt = '[{u0022idu0022:2242286,u0022titleu0022:u0022日常生活消费u0022,u0022displayLoanTypeu0022:u0022SDRZu0022,u0022interestu0022:u002210.20u0022,u0022amountu0022:u0022147,500.00u0022,u0022monthsu0022:36,u0022finishedRatiou0022:100,u0022statusu0022:u0022FIRST_READYu0022},{u0022idu0022:2242184,u0022titleu0022:u0022装修u0022,u0022displayLoanTypeu0022:u0022SDRZu0022,u0022interestu0022:u002210.20u0022,u0022amountu0022:u0022101,000.00u0022,u0022monthsu0022:36,u0022finishedRatiou0022:100,u0022statusu0022:u0022FIRST_READYu0022},{u0022idu0022:2242176,u0022titleu0022:u0022资金周转u0022,u0022displayLoanTypeu0022:u0022SDRZu0022,u0022interestu0022:u002210.20u0022,u0022amountu0022:u0022191,500.00u0022,u0022monthsu0022:36,u0022finishedRatiou0022:100,u0022statusu0022:u0022FIRST_READYu0022},{u0022idu0022:2242173,u0022titleu0022:u0022资金周转u0022,u0022displayLoanTypeu0022:u0022SDRZu0022,u0022interestu0022:u002210.20u0022,u0022amountu0022:u0022144,000.00u0022,u0022monthsu0022:36,u0022finishedRatiou0022:100,u0022statusu0022:u0022FIRST_READYu0022}]';
-    var financeList = '\u0022\u0022';
-
-    trade = JSON.parse(trade);
-    article = JSON.parse(article);
-    exchange = JSON.parse(exchange);
-    salary = JSON.parse(salary);
-    fund = JSON.parse(fund);
-    debt = JSON.parse(debt);
-    financeList = JSON.parse(financeList);
-
-    require(["home:page/index-werenrendai/index.js"], function (home) {
-        home.init({
-            trade: trade,
-            article: article,
-            exchange: exchange,
-            salary: salary,
-            fund: fund,
-            debt: debt,
-            financeList: financeList,
-        });
-    });
-}();
-!function () {
-
-
-}();</script>
+</script>
+<div class="new-announcement">
+  <div class="new-announcement-title">最新公告</div>
+  <div class="new-announcement-content">
+    <div id="scrollDiv">
+      <ul style="margin-top: 0px;">
+        <li><a class="black-link" href="公司公告详细.html" target="_blank"> 2015年9月8日还款公告</a></li>
+        <li><a class="black-link" href="公司公告详细.html" target="_blank"> 2015年纪念抗日战争胜利放假公告</a></li>
+      </ul>
+    </div>
+  </div>
+  <a class="more" href="#">更多</a> </div>
+<div class="ipubs"><span class="o1">累计投资金额:<strong>1,047,288,128.79</strong>元</span> <span class="o2">已还本息:<strong>400,507,750.81</strong>元</span><span class="o2">余额:<strong>677,679,983.07</strong>元</span><span class="o4">注册人数:<strong>20649</strong>人</span></div>
+<div class="feature"> <a class="fea1" href="#"> <i></i>
+  <h3>高收益</h3>
+  <span>年化收益率最高达“20%<br>
+  50元起投，助您轻松获收益</span> </a> <a class="fea2" href="#"> <i></i>
+  <h3>安全理财</h3>
+  <span>100%本息保障<br>
+  实物质押，多重风控审核</span> </a> <a class="fea3" href="#"> <i></i>
+  <h3>随时赎回</h3>
+  <span>两步赎回您的资金<br>
+  最快当日到账</span> </a> <a class="fea4" href="#"> <i></i>
+  <h3>随时随地理财</h3>
+  <span>下载手机客户端<br>
+  随时随地轻松理财</span> </a> </div>
+<!--中间内容-->
+<div class="main clearfix mrt30" data-target="sideMenu">
+  <div class="wrap">
+    <div class="page-left fn-left">
+      <div class="mod-borrow">
+        <div class="hd">
+          <h2 class="pngbg"><i class="icon icon-ttyx"></i>推荐项目</h2>
+          <div class="fn-right f14 c-888">常规发标时间每天<span class="c-555">10:00，13:00和20:00</span>，其余时间根据需要随机发</div>
+        </div>
+        <div class="bd">
+          <div class="des"><span class="fn-left">期限1-29天，期限短，收益见效快</span><a href="list.html" class="fn-right">查看更多&gt;&gt;</a></div>
+          <div class="borrow-list">
+            <ul>
+              <li>
+                <div class="title"><a href="infor.html" target="_blank"><i class="icon icon-zhai" title="债权贷"></i></a><a href="infor.html" class="f18" title="金女士债权质押借款1万元" target="_blank">金女士债权质押借款1万元</a></div>
+                <table width="100%" border="0" cellpadding="0" cellspacing="0">
+                  <tbody>
+                    <tr>
+                      <td width="260">借款金额<span class="f24 c-333">10000.00</span>元</td>
+                      <td width="165">年利率<span class="f24 c-333">10.70% </span></td>
+                      <td width="180" align="center">期限<span class="f24 c-orange">4</span>天</td>
+                      <td><div class="circle">
+                          <div class="left progress-bar">
+                            <div class="progress-bgPic progress-bfb5">
+                              <div class="show-bar"> 56.3% </div>
+                            </div>
+                          </div>
+                        </div></td>
+                      <td align="right"><a class="ui-btn btn-gray" href="#">还款中</a> </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </li>
+              <li>
+                <div class="title"><a href="infor.html" target="_blank"><i class="icon icon-zhai" title="债权贷"></i></a><a href="infor.html" class="f18" title="周先生债权质押借款0.1万元" target="_blank">周先生债权质押借款0.1万元</a></div>
+                <table width="100%" border="0" cellpadding="0" cellspacing="0">
+                  <tbody>
+                    <tr>
+                      <td width="260">借款金额<span class="f24 c-333">1000.00</span>元</td>
+                      <td width="165">年利率<span class="f24 c-333">10.85% </span></td>
+                      <td width="180" align="center">期限<span class="f24 c-orange">7</span>天</td>
+                      <td><div class="circle">
+                          <div class="left progress-bar">
+                            <div class="progress-bgPic progress-bfb1">
+                              <div class="show-bar"> 10.07% </div>
+                            </div>
+                          </div>
+                        </div></td>
+                      <td align="right"><a class="ui-btn btn-gray" href="#">还款中</a> </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="mod-borrow mrt20">
+        <div class="hd">
+          <h2 class="pngbg"><i class="icon icon-yyyz"></i>政信贷</h2>
+          <div class="fn-right f14 c-888">参与人次：<span class="c-555">61.37万次</span>&nbsp;&nbsp;&nbsp;平均满标时间：<span class="c-555">1小时24分11秒</span> </div>
+        </div>
+        <div class="bd">
+          <div class="des"><span class="fn-left">期限1-12月，收益更高</span><a href="list.html" class="fn-right">查看更多&gt;&gt;</a></div>
+          <div class="borrow-list">
+            <ul>
+              <li>
+                <div class="title"><a href="#" target="_blank"><i class="icon icon-che" title="车易贷"></i></a><a href="infor.html" class="f18" title="毕先生宝马320汽车质押贷款10万元" target="_blank">毕先生宝马320汽车质押贷款10万元</a></div>
+                <table width="100%" border="0" cellpadding="0" cellspacing="0">
+                  <tbody>
+                    <tr>
+                      <td width="260">借款金额<span class="f24 c-333">100000.00</span>元</td>
+                      <td width="165">年利率<span class="f24 c-orange relative">12.00%
+                        <!--公益标 20150724 lj-->
+                        <!--公益标 20150724 lj-->
+                        </span></td>
+                      <td width="180" align="center">期限<span class="f24 c-333">1</span>个月</td>
+                      <td><div class="circle">
+                          <div class="left progress-bar">
+                            <div class="progress-bgPic progress-bfb10">
+                              <div class="show-bar"> 100% </div>
+                            </div>
+                          </div>
+                        </div></td>
+                      <td align="right"><a class="ui-btn btn-gray" href="#">还款中</a> </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </li>
+              <li>
+                <div class="title"><a href="infor.html" target="_blank"><i class="icon icon-che" title="车易贷"></i></a><a href="#" class="f18" title="王先生克莱斯勒300C汽车质押贷款15万元" target="_blank">王先生克莱斯勒300C汽车质押贷款15万元</a></div>
+                <table width="100%" border="0" cellpadding="0" cellspacing="0">
+                  <tbody>
+                    <tr>
+                      <td width="260">借款金额<span class="f24 c-333">150000.00</span>元</td>
+                      <td width="165">年利率<span class="f24 c-orange relative">12.00%
+                        <!--公益标 20150724 lj-->
+                        <!--公益标 20150724 lj-->
+                        </span></td>
+                      <td width="180" align="center">期限<span class="f24 c-333">1</span>个月</td>
+                      <td><div class="circle">
+                          <div class="left progress-bar">
+                            <div class="progress-bgPic progress-bfb10">
+                              <div class="show-bar"> 100% </div>
+                            </div>
+                          </div>
+                        </div></td>
+                      <td align="right"><a class="ui-btn btn-gray" href="#">还款中</a> </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="mod-borrow mrt20">
+        <div class="hd">
+          <h2 class="pngbg"><i class="icon icon-nnyy"></i>实时变现</h2>
+          <div class="fn-right f14 c-888">参与人次：<span class="c-555">8.35万次</span>&nbsp;&nbsp;&nbsp;平均满标时间：<span class="c-555">1小时41分19秒</span> </div>
+        </div>
+        <div class="bd">
+          <div class="des"> <span class="fn-left">期限12-60月，打理更加容易</span><a href="list.html" class="fn-right">查看更多&gt;&gt;</a></div>
+          <div class="borrow-list">
+            <ul>
+              <li>
+                <div class="title"><a href="infor.html" target="_blank"><i class="icon icon-che" title="车易贷"></i></a><a href="infor.html" class="f18" title="朱先生比亚迪S6汽车抵押贷款4.5万元" target="_blank">朱先生比亚迪S6汽车抵押贷款4.5万元</a></div>
+                <table width="100%" border="0" cellpadding="0" cellspacing="0">
+                  <tbody>
+                    <tr>
+                      <td width="260">借款金额<span class="f24 c-333">45000.00</span>元</td>
+                      <td width="165">年利率<span class="f24 c-orange relative">13.80%
+                        <!--公益标 20150724 lj-->
+                        <!--公益标 20150724 lj-->
+                        </span></td>
+                      <td width="180" align="center">期限<span class="f24 c-333">18</span>个月</td>
+                      <td><div class="circle">
+                          <div class="left progress-bar">
+                            <div class="progress-bgPic" style="background-position: -610px -40px;">
+                              <div class="show-bar"> 100% </div>
+                            </div>
+                          </div>
+                        </div></td>
+                      <td align="right"><a class="ui-btn btn-gray" href="#">还款中</a> </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </li>
+              <li>
+                <div class="title"><a href="infor.html" target="_blank"><i class="icon icon-che" title="车易贷"></i></a><a href="infor.html" class="f18" title="朱先生别克英朗汽车抵押贷款5万元" target="_blank">朱先生别克英朗汽车抵押贷款5万元</a></div>
+                <table width="100%" border="0" cellpadding="0" cellspacing="0">
+                  <tbody>
+                    <tr>
+                      <td width="260">借款金额<span class="f24 c-333">50000.00</span>元</td>
+                      <td width="165">年利率<span class="f24 c-orange relative">13.80%
+                        <!--公益标 20150724 lj-->
+                        <!--公益标 20150724 lj-->
+                        </span></td>
+                      <td width="180" align="center">期限<span class="f24 c-333">18</span>个月</td>
+                      <td><div class="circle">
+                          <div class="left progress-bar">
+                            <div class="progress-bgPic progress-bfb10">
+                              <div class="show-bar"> 100% </div>
+                            </div>
+                          </div>
+                        </div></td>
+                      <td align="right"><a class="ui-btn btn-gray" href="#">还款中</a> </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="mod-borrow mrt20">
+        <div class="hd">
+          <h2 class="pngbg"><i class="icon icon-ssbx"></i>债权转让</h2>
+          <div class="fn-right f14 c-888">参与人次：<span class="c-555">8.06万次</span> &nbsp;&nbsp;&nbsp;平均转让用时：<span class="c-555">03小时06分22秒</span> </div>
+        </div>
+        <div class="bd">
+          <div class="des"><span class="fl">其他投资人折价转让，转让项目会随时更新，惊喜不断</span><a href="list.html" class="fn-right">查看更多&gt;&gt;</a></div>
+          <div class="borrow-list">
+            <ul>
+              <li>
+                <div class="title"><a href="infor.html" target="_blank"><i class="icon icon-zhuan" title="债权转让"></i></a><a href="infor.html" title="汪女士债权质押借款1万元" class="f18" target="_blank">汪女士债权质押借款1万元</a></div>
+                <table width="100%" border="0" cellpadding="0" cellspacing="0">
+                  <tbody>
+                    <tr>
+                      <td width="260" height="60">剩余期限<span class="f24 c-333"> 2月8天 </span></td>
+                      <td width="200">预期收益率<span class="f24"><a href="javascript:;" class="tx-line c-orange" onClick="showCalculator(this,12.42,84890,10068.17)" title="点击查看纯收益率">12.42%</a></span></td>
+                      <td width="280" align="center">转让价格<span class="f24 c-333">10,068.17</span>元</td>
+                      <td width="88" align="right" class="time"><a href="#" class="ui-btn btn-gray" target="_blank">已转让</a>
+                        <p class="f12"> 用时：48秒 </p></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="page-right fn-right" style="top: 0px;">
+      <div class="mod-risk-tip"><i class="icon icon-tip"></i><a href="/bxbz/index.html" class="c-orange">收益与风险并存，请理性选择平台</a></div>
+      <div class="mod mod-notice mrt20">
+        <div class="hd">
+          <h3>网站公告</h3>
+          <a href="/gonggao/news/index.html" class="fn-right">更多&gt;</a></div>
+        <div class="bd">
+          <div class="article-list clearfix">
+            <ul>
+              <li><a href="#" title="关于“金融产品”产品的说明">关于“金融产品”产品的说明</a><span class="date">06-19</span></li>
+              <li><a href="#" title="2015年9月10日发标预告">2015年9月10日发标预告</a><span class="date">09-10</span></li>
+              <li><a href="#" title="关于平台“纪念抗战胜利70周年”9月3日***">关于平台“纪念抗战胜利70周年***</a><span class="date">09-02</span></li>
+              <li><a href="#" title="关于P2P理财平台新系统升级的公告">关于P2P理财平台新系统***</a><span class="date">09-02</span></li>
+              <li><a href="#" title="关于债权贷新规调整实施的公告">关于债权贷新规调整实施的公告</a><span class="date">08-25</span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="mod mod-rank clearfix ui-tab mrt20">
+        <div class="hd">
+          <h3>排行榜</h3>
+          <div class="ui-tab-nav"> <i class="icon icon-cur"></i>
+            <ul>
+              <li class="active"><a href="#">收益</a></li>
+              <li><a href="#">投资</a></li>
+            </ul>
+            <a href="#" class="fn-right">更多&gt;</a> </div>
+        </div>
+        <div class="bd">
+          <div class="ui-tab-cont">
+            <div class="ui-tab-item active">
+              <ul class="rank-list">
+                <li><span class="fl"><em class="n1">01</em>gz******</span><span class="fr">￥1,115,461.07</span></li>
+                <li><span class="fl"><em class="n2">02</em>米克******</span><span class="fr">￥1,003,890.04</span></li>
+                <li><span class="fl"><em class="n3">03</em>灵儿******</span><span class="fr">￥895,618.71</span></li>
+                <li><span class="fl"><em class="n4">04</em>li******</span><span class="fr">￥795,154.06</span></li>
+                <li><span class="fl"><em class="n5">05</em>豆芽******</span><span class="fr">￥747,154.44</span></li>
+              </ul>
+            </div>
+            <div class="ui-tab-item">
+              <ul class="rank-list">
+                <li><span class="fl"><em class="n1">01</em>黄世******</span><span class="fr">￥78,714,974.00</span></li>
+                <li><span class="fl"><em class="n2">02</em>一诺******</span><span class="fr">￥58,428,720.00</span></li>
+                <li><span class="fl"><em class="n3">03</em>hj******</span><span class="fr">￥57,844,191.00</span></li>
+                <li><span class="fl"><em class="n4">04</em>老马******</span><span class="fr">￥38,808,064.00</span></li>
+                <li><span class="fl"><em class="n5">05</em>写意******</span><span class="fr">￥31,341,159.00</span></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="mod mod-report ui-tab clearfix mrt20">
+        <div class="hd">
+          <div class="ui-tab-nav"> <i class="icon icon-cur"></i>
+            <ul>
+              <li class="active"><a href="javascript:;">媒体报道</a></li>
+              <li class=""><a href="javascript:;">理财知识</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="bd">
+          <div class="ui-tab-cont">
+            <div class="ui-tab-item active">
+              <div class="headlines"> <img src="images/news.jpg"> <a title="平台遭遇P2P滑稽抄袭" target="_blank" href="#">平台遭遇P2P滑稽抄袭</a><br>
+                <span class="des">抄袭者居然把被抄袭者的名字一起抄下来，这样的乌龙抄袭你见过没...</span> </div>
+              <div class="article-list">
+                <ul>
+                  <li>[凤凰网]<a href="#" title="平台携手哈工大关爱毕节留守儿童" target="_blank">平台携手哈工大关爱毕节留守儿童</a></li>
+                  <li>[21CN财经]<a href="#" title="接受网贷之家专访" target="_blank">接受网贷之家专访</a></li>
+                  <li>[和讯网]<a href="#" title="受邀参加中国财经峰会 斩获行业最具品牌影响力等两项大奖" target="_blank">受邀参加中国财经峰会 斩获行业最具品牌影响力等两项大奖</a></li>
+                </ul>
+              </div>
+            </div>
+            <div class="ui-tab-item">
+              <div class="article-list">
+                <ul>
+                  <li>[<a href="#">P2P网贷</a>]<a href="#" title="随着互联网金融的快速发展，越来越多的人开始加入到p2p网贷投资行列，作为一种相对来说还比较新兴的理财产品" target="_blank"> 合肥p2p网贷哪家好，投资新人该如何选择p2p网贷平台</a></li>
+                  <li>[<a href="#">外汇</a>]<a href="#" title="投资者应知道，外汇交易市场是一个保证金交易市场，投资者可以利用外汇保证金交易进行更有收益空间的交易" target="_blank"> 什么是外汇保证金交易有哪些方式</a></li>
+                  <li>[<a href="#">外汇</a>]<a href="#" title="很多的投资者都听说过外汇保证金交易，他们都知道该交易方式可以让投资者有机会进行更有收益空间的交易" target="_blank"> 外汇保证金交易开户有什么样的具体优势呢？</a></li>
+                  <li>[<a href="#">保险理财</a>]<a href="#" title="保险理财因为其特殊性而对人员专业知识、道德标准以及人生阅历提出了较高要求。但是我国的保险业人才还存在很多问题" target="_blank"> 保险公司存在的人才需求问题</a></li>
+                  <li>[<a href="#">保险理财</a>]<a href="#" title="保险理财的专业人士缺乏已经成为我国保险公司个人理财业务发展的一大瓶颈，保险公司的员工要能够成为一个好的客户经理" target="_blank"> 保险理财产品销售人员需要具备的基本素质</a></li>
+                  <li>[<a href="#">外汇</a>]<a href="#" title="外货期货也叫货币期货，所谓期货自然与现货有着明显的区别，外汇期货除了价格表现形式上与现货有所差异之外，外汇期货交易是用一种货币按照汇率兑换成另一种货币的期货合约" target="_blank"> 什么是外汇期货及其套利形式介绍</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="mrt20 mod"> <a href="#"><img src="images/pic_home_js.jpg" width="300" height="80" alt="收益计算器" class="pic"></a></div>
+    </div>
+  </div>
+</div>
+<script src="script/index.js"></script>
+<div class="partners wrap clearfix mrb30">
+  <div class="partners-inner ui-tab">
+    <div class="hd">
+      <div class="ui-tab-nav"> <i class="icon icon-cur" style="left: 151px;"></i>
+        <ul>
+          <li class=""><a href="#">合作机构</a></li>
+          <li class="active"><a href="#">友情链接</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="bd">
+      <div class="ui-tab-cont">
+        <div class="ui-tab-item active">
+          <div class="img-scroll">
+            <div class="container">
+              <ul>
+                <li><img src="images/logo_sbcvc.png" width="152" height="52" alt="软银"></li>
+                <li><img src="images/logo_abc.png" width="152" height="52" alt="农业银行"></li>
+                <li><img src="images/logo_wdzj.png" width="152" height="52" alt="网贷之家"></li>
+                <li><img src="images/logo_baidu.png" width="152" height="52" alt="百度"></li>
+                <li><img src="images/logo_aqb.png" width="152" height="52" alt="安全宝"></li>
+                <li><img src="images/logo_gds.png" width="152" height="52" alt="万国数据"></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="ui-tab-item">
+          <div class="links"> <a target="_blank" href="http://www.htmlsucai.com">网贷互联</a> <a target="_blank" href="http://www.htmlsucai.com">北京证券网</a> <a target="_blank" href="http://www.htmlsucai.com">易贷微理财</a> <a target="_blank" href="http://www.htmlsucai.com">P2P</a> <a target="_blank" href="http://www.htmlsucai.com">网贷中国</a> <a target="_blank" href="http://www.htmlsucai.com">网贷帮手</a> <a target="_blank" href="https://www.okcoin.cn">比特币网</a> <a target="_blank" href="http://www.htmlsucai.com">网贷110</a> <a target="_blank" href="http://www.htmlsucai.com">招财猫理财</a> </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!--网站底部-->
+<div id="footer" class="ft">
+  <div class="ft-inner clearfix">
+    <div class="ft-helper clearfix">
+      <dl>
+        <dt>关于我们</dt>
+        <dd><a href="<?php echo U('Company/introduce');?>">公司简介</a><a href="<?php echo U('Company/manage');?>">管理团队</a><a href="<?php echo U('Company/website');?>">网站公告</a></dd>
+      </dl>
+      <dl>
+        <dt>相关业务</dt>
+        <dd><a href="<?php echo U('Invest/invest');?>">我要投资</a><a href="我要借款.html">我要借款</a></dd>
+      </dl>
+      <dl>
+        <dt>帮助中心</dt>
+        <dd><a href="帮助中心.html">新手入门</a><a href="个人中心首页.html">我的账户</a><a href="<?php echo U('Invest/invest');?>">债权转让</a></dd>
+      </dl>
+      <dl>
+        <dt>联系我们</dt>
+        <dd><a href="<?php echo U('Company/contact');?>">联系我们</a></dd>
+      </dl>
+    </div>
+    <div class="ft-service">
+      <dl>
+        <dd>
+          <p><strong>400-660-1268</strong><br>
+            工作日 9:00-22:00<br>
+            官方交流群:<em>12345678</em><br>
+            工作日 9:00-22:00 / 周六 9:00-18:00<br>
+          </p>
+          <div class="ft-serv-handle clearfix"><a class="icon-hdSprite icon-ft-sina a-move a-moveHover" title="亿人宝新浪微博" target="_blank" href="#"></a><a class="icon-hdSprite icon-ft-qqweibo a-move a-moveHover" title="亿人宝腾讯微博" target="_blank" href="#"></a><a class="icon-ft-qun a-move a-moveHover" title="亿人宝QQ群" target="_blank" href="#"></a><a class="icon-hdSprite icon-ft-email a-move a-moveHover mrn" title="阳光易贷email" target="_blank" href="mailto:xz@yirenbao.com"></a></div>
+        </dd>
+      </dl>
+    </div>
+    <div class="ft-wap clearfix">
+      <dl>
+        <dt>官方二维码</dt>
+        <dd><span class="icon-ft-erweima"><img src="images/code.png" style="display: inline;"></span></dd>
+      </dl>
+    </div>
+  </div>
+  <div class="ft-record">
+    <div class="ft-approve clearfix"><a class="icon-approve approve-0 fadeIn-2s" target="_blank" href="#"></a><a class="icon-approve approve-1 fadeIn-2s" target="_blank" href="#"></a><a class="icon-approve approve-2 fadeIn-2s" target="_blank" href="#"></a><a class="icon-approve approve-3 fadeIn-2s" target="_blank" href="#"></a></div>
+    <div class="ft-identity">©2015 亿人宝 All rights reserved&nbsp;&nbsp;&nbsp;<span class="color-e6">|</span>&nbsp;&nbsp;&nbsp;安徽省亿人宝投资管理有限公司&nbsp;&nbsp;&nbsp;<span class="color-e6">|</span>&nbsp;&nbsp;&nbsp;<a target="_blank" href="http://www.htmlsucai.com">皖ICP备12345678号-1</a></div>
+  </div>
+</div>
 </body>
-
 </html>
