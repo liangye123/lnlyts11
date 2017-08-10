@@ -56,5 +56,9 @@ class MyController extends Controller {
     //账户设置
     public function account(){
         $this->display('My/account');
+    }      
+    //新手入门
+    public function novice(){
+        $this->display('My/novice');
     }   
 }
