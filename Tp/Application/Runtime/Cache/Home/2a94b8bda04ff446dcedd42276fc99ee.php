@@ -532,11 +532,11 @@ $(function(){
       </dl>
       <dl>
         <dt>相关业务</dt>
-        <dd><a href="<?php echo U('Invest/invest');?>">我要投资</a><a href="我要借款.html">我要借款</a></dd>
+        <dd><a href="<?php echo U('Invest/invest');?>">我要投资</a><a href="<?php echo U('Invest/loan');?>">我要借款</a></dd>
       </dl>
       <dl>
         <dt>帮助中心</dt>
-        <dd><a href="帮助中心.html">新手入门</a><a href="个人中心首页.html">我的账户</a><a href="<?php echo U('Invest/invest');?>">债权转让</a></dd>
+        <dd><a href="<?php echo U('My/novice');?>">新手入门</a><a href="<?php echo U('My/index');?>">我的账户</a><a href="<?php echo U('Invest/invest');?>">债权转让</a></dd>
       </dl>
       <dl>
         <dt>联系我们</dt>

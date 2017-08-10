@@ -40,7 +40,7 @@
   </div>
   <div class="header min-width">
     <div class="container">
-      <div class="fn-left logo"> <a class="" href="index.html"> <img src="images/logo.png"  title=""> </a> </div>
+      <div class="fn-left logo"> <a class="" href="<?php echo U('Index/index');?>"> <img src="images/logo.png"  title=""> </a> </div>
       <ul class="top-nav fn-clear">
         <li class="on"> <a href="<?php echo U('Index/index');?>">首页</a> </li>
         <li> <a href="<?php echo U('Invest/invest');?>" class="">我要投资</a> </li>
@@ -691,19 +691,19 @@
     <div class="ft-helper clearfix">
       <dl>
         <dt>关于我们</dt>
-        <dd><a href="公司简介.html">公司简介</a><a href="管理团队.html">管理团队</a><a href="网站公告.html">网站公告</a></dd>
+        <dd><a href="<?php echo U('Company/introduce');?>">公司简介</a><a href="<?php echo U('Company/manage');?>">管理团队</a><a href="<?php echo U('Company/website');?>">网站公告</a></dd>
       </dl>
       <dl>
         <dt>相关业务</dt>
-        <dd><a href="list.html">我要投资</a><a href="我要借款.html">我要借款</a></dd>
+        <dd><a href="<?php echo U('Invest/invest');?>">我要投资</a><a href="<?php echo U('Invest/loan');?>">我要借款</a></dd>
       </dl>
       <dl>
         <dt>帮助中心</dt>
-        <dd><a href="帮助中心.html">新手入门</a><a href="个人中心首页.html">我的账户</a><a href="list.html">债权转让</a></dd>
+        <dd><a href="<?php echo U('My/novice');?>">新手入门</a><a href="<?php echo U('My/index');?>">我的账户</a><a href="<?php echo U('Invest/invest');?>">债权转让</a></dd>
       </dl>
       <dl>
         <dt>联系我们</dt>
-        <dd><a href="联系我们.html">联系我们</a></dd>
+        <dd><a href="<?php echo U('Company/contact');?>">联系我们</a></dd>
       </dl>
     </div>
     <div class="ft-service">
