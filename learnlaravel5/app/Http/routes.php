@@ -52,6 +52,24 @@ Route::any('my/novice', 'Home\MyController@novice');
 Route::any('invest/index', 'Home\InvestController@index');
 //我要投资 详情
 Route::any('invest/infor', 'Home\InvestController@infor');
+//手机验证
+Route::any('my/phone', 'Home\MyController@phone');
+//修改手机页面
+Route::any('my/cell_num', 'Home\MyController@cell_num');
+//修改手机
+Route::any('my/sava_phone', 'Home\MyController@sava_phone');
+//身份证表单页面
+Route::any('my/identity', 'Home\MyController@identity');
+//验证身份证号码
+Route::any('my/Aut', 'Home\MyController@Aut');
+//邮箱修改
+Route::any('my/sell_email', 'Home\MyController@sell_email');
+//修改密码
+Route::any('my/sell_password', 'Home\MyController@sell_password');
+//验证身份证号码是否合法
+Route::any('my/idcard', 'Home\MyController@idcard');
+
+
 
 
  

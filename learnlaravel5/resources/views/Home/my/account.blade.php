@@ -241,14 +241,49 @@
       <div class="personal-zhsz">
         <h3><i>账户设置</i></h3>
         <div class="personal-level"> <span class="wzd">您的账户完整度</span><i class="grzxbg level3" style="border: none; margin: 37px 0px 0px 20px; height: 17px; background-position: 0px -550px;"></i><span class="state">[中]</span> <i id="zhwzd" class="markicon fl mt35"></i><span class="arrow-personal">请尽快完成账户安全设置，以确保您的账户安全</span><span class="grzxbg icon-personal"></span> </div>
-        <ul>
-          <li><i class="grzxbg p-right"></i><span class="zhsz-span1">手机号</span><span class="zhsz-span2">150****0139</span><span class="zhsz-span3"><a href="javascript:void(0)" onclick="showSpan('alert-checkOldMobile')">更改</a></span></li>
-          <input type="hidden" value="false" id="authenticationMobile">
-          <li><i class="grzxbg p-danger"></i><span class="zhsz-span1">身份认证</span><span class="zhsz-span2">未认证</span><span class="zhsz-span3"><a href="#">认证</a></span></li>
-          <li><i class="grzxbg p-danger"></i><span class="zhsz-span1">第三方支付</span><span class="zhsz-span2">未开通</span><span class="zhsz-span3"><a href="#">开通</a></span></li>
-          <li> <i class="grzxbg p-right"></i> <span class="zhsz-span1">电子邮箱</span> <span class="zhsz-span2">348****@qq.com</span> <span class="zhsz-span3"> <a href="#" onclick="showSpan('alert-updateEmail')">更改</a> </span> </li>
-          <li><i class="grzxbg p-right"></i><span class="zhsz-span1">登录密码</span><span class="zhsz-span2"></span><span class="zhsz-span3"><a href="javascript:void(0)" onclick="showSpan('alert-updatePass')">更改</a></span></li>
-        </ul>
+
+
+		  <ul>
+			  <li><i class="grzxbg p-right"></i><span class="zhsz-span1">手机号</span><span class="zhsz-span2">{{$persion_info['telephone_m']}}</span><span class="zhsz-span3"><a href="javascript:void(0)" onclick="showSpan('alert-checkOldMobile')">更改</a></span></li>
+			  <input type="hidden" value="false" id="authenticationMobile">
+			  <li>
+				  @if ($persion_info['idcard'] == "")
+					  <i class="grzxbg p-danger"></i>
+					  <span class="zhsz-span1">身份认证</span>
+					  <span class="zhsz-span2">未认证</span>
+					  <span class="zhsz-span3"><a href="identity?id={{$persion_info['id']}}">认证</a></span>
+					  @else
+					  <i class="grzxbg p-right"></i>
+					  <span class="zhsz-span1">身份认证</span>
+					  <span class="zhsz-span2">{{$persion_info['idcard_m']}}</span>
+
+					  <span class="zhsz-span3" style="color:green;">已认证</span>
+				  @endif
+			  </li>
+			  <li><i class="grzxbg p-danger"></i><span class="zhsz-span1">第三方支付</span><span class="zhsz-span2">未开通</span><span class="zhsz-span3"><a href="openthird">开通</a></span></li>
+			  <li> <i class="grzxbg p-right"></i> <span class="zhsz-span1">电子邮箱</span> <span class="zhsz-span2">{{$persion_info['email']}}</span> <span class="zhsz-span3"> <a href="javascript:void(0)" onclick="showSpan('alert-updateEmail')">更改</a> </span> </li>
+			  <li><i class="grzxbg p-right"></i><span class="zhsz-span1">登录密码</span><span class="zhsz-span2"></span><span class="zhsz-span3"><a href="javascript:void(0)" onclick="showSpan('alert-updatePass')">更改</a></span></li>
+		  </ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
       </div>
     </div>
     <script type="text/javascript">
@@ -461,19 +496,28 @@
           <ul>
             <li>
               <label class="txt-name">原手机号</label>
-              <label id="checkOldMobileForm:oldMobileNumber" class="txt240"> 150****0139</label>
+              <label id="checkOldMobileForm:oldMobileNumber" class="txt240">{{$persion_info['telephone_m']}}</label>
             </li>
             <li>
               <label class="txt-name">验证码</label>
-              <input id="checkOldMobileForm:checkOldMobileFormauthCode" type="text" name="checkOldMobileForm:checkOldMobileFormauthCode" class="txt110" maxlength="8" onblur="jsf.util.chain(this,event,'return checkOldMobileFormAuthCode()','mojarra.ab(this,event,\'blur\',0,\'@this\')')" onfocus="clearValue(this)" placeholder="请输入验证码">
-              <span id="sendCode7"><a id="checkOldMobileForm:sendAuthCodeBtn" href="#" onclick="jsf.util.chain(this,event,'return validateModifyPhoneSMS(\'15055100139\');','PrimeFaces.ab({source:this,event:\'action\',process:\'checkOldMobileForm:sendAuthCodeBtn checkOldMobileForm:oldMobileNumber\',oncomplete:function(xhr,status,args){s7Code(xhr, status, args, \'dx\');}}, arguments[1]);');return false" class="btn-code">免费获取校验码</a><a id="checkOldMobileForm:sendAuthCodeBtn7" href="#" style="display:none;" onclick="mojarra.ab(this,event,'action','checkOldMobileForm:oldMobileNumber',0,{'onevent':sCode7()});return false" class="btn-code">免费获取校验码</a> </span> <span id="sendCodeGrey7" style="display:none;"> <a href="#" id="sendAuthCodeBtn7" class="btn-codeAfter" style="cursor:default;">免费获取校验码</a> </span>
+              <input id="checkOldMobileForm:checkOldMobileFormauthCode" type="text" name="checkOldMobileForm:checkOldMobileFormauthCode" class="txt110 yzm" maxlength="8" onblur="jsf.util.chain(this,event,'return checkOldMobileFormAuthCode()','mojarra.ab(this,event,\'blur\',0,\'@this\')')" onfocus="clearValue(this)" placeholder="请输入验证码">
+
+
+				<span id="sendCode7" class="captcha" phone="{{$persion_info['telephone']}}">
+				  <!--<input type="button"  id="checkOldMobileForm:sendAuthCodeBtn Jet" href="javascript:void (0)" class="btn-code" value="免费获取校验码"  onclick="sendemail()">-->
+
+				  <input type="button" id="btn" class="btn" value="免费获取验证码" onclick="sendemail()" style="color: white; width: 95px;height:30px; background-color: darkorange">
+				</span>
+
+
+				<span id="sendCodeGrey7" style="display:none;"> <a href="#" id="sendAuthCodeBtn7" class="btn-codeAfter" style="cursor:default;">免费获取校验码</a> </span>
               <div id="checkOldMobileFormauthCodeErrorDiv" class="alert-error120"></div>
               <div id="authCodeMsg" style="display:none;" class="yzmplace"> 验证码已发送到您手机<span id="mobileMsg"></span>，如果收不到短信，请 <a id="checkOldMobileForm:sendAuthCodeBtn3" href="#" style="color:blue;" onclick="PrimeFaces.ab({source:this,event:'action',process:'checkOldMobileForm:sendAuthCodeBtn3 checkOldMobileForm:oldMobileNumber',oncomplete:function(xhr,status,args){s7Code(xhr, status, args, 'yy');}}, arguments[1]);;return false">语音获取</a> </div>
               <div id="authCodeMsg2" style="display:none;" class="yzmplace"> 您的手机<span id="mobileMsg2"></span>将在60秒内收到语音电话，请接听！ </div>
             </li>
             <li><span class="txt-right" style="display:none;"><i class="error-icon"></i><i class="error-tip">验证码错误请重新输入</i></span><br>
-              <input type="submit" name="checkOldMobileForm:j_idt129" value="确 认" class="btn-ok txt-right" onclick="return checkCheckOldMobileAll()">
-            </li>
+				<input type="button" id="sub" name="checkOldMobileForm:j_idt129" value="确 认" class="btn-ok txt-right" onclick="return checkCheckOldMobileAll()">
+			</li>
           </ul>
           <input type="hidden" name="javax.faces.ViewState" id="javax.faces.ViewState" value="6247899183375709698:8256389782682127070" autocomplete="off">
         </form>
@@ -660,19 +704,21 @@
             <li>
               <label class="txt-name">请输入新邮箱</label>
               <input type="hidden" value="15055100139" id="mobile">
-              <input id="changeEmailForm:newEmail" type="text" name="changeEmailForm:newEmail" class="txt235" onblur="jsf.util.chain(this,event,'return checkchangeEmailFormNewEmail()','mojarra.ab(this,event,\'blur\',0,0)')" placeholder="请输入邮箱">
+              <input id="changeEmailForm:newEmail" type="text" name="changeEmailForm:newEmail" class="txt235 email" onblur="jsf.util.chain(this,event,'return checkchangeEmailFormNewEmail()','mojarra.ab(this,event,\'blur\',0,0)')" placeholder="请输入邮箱">
               <div id="newEmailErrorDiv" class="alert-error120"></div>
             </li>
             <li>
-              <label class="txt-name">手机验证码</label>
-              <input id="changeEmailForm:changeEmailFormauthCode" type="text" name="changeEmailForm:changeEmailFormauthCode" class="txt110" maxlength="8" onblur="mojarra.ab(this,event,'blur',0,0)" placeholder="请输入手机验证码">
-              <span id="sendCode2"><a id="changeEmailForm:sendAuthCodeBtn" href="#" onclick="jsf.util.chain(this,event,'return validateMailSMS(\'15055100139\');','PrimeFaces.ab({source:this,event:\'action\',process:\'changeEmailForm:sendAuthCodeBtn changeEmailForm:newEmail\',oncomplete:function(xhr,status,args){s3Code(xhr, status, args, \'dx\');}}, arguments[1]);');return false" class="btn-code">免费获取校验码</a><a id="changeEmailForm:sendAuthCodeBtn6" href="#" style="display:none;" onclick="mojarra.ab(this,event,'action','@this changeEmailForm:newEmail',0,{'onevent':sCode3});return false" class="btn-code">免费获取校验码</a> </span> <span id="sendCodeGrey2" style="display:none;"> <a href="#" id="sendAuthCodeBtn3" class="btn-codeAfter" style="cursor:default;">免费获取校验码</a> </span> </li>
+				<label class="txt-name">手机验证码</label>
+				<input id="changeEmailForm:changeEmailFormauthCode" type="text" name="changeEmailForm:changeEmailFormauthCode" class="txt110 captcha_phone" maxlength="8" onblur="mojarra.ab(this,event,'blur',0,0)" placeholder="请输入手机验证码">
+				<span id="sendCode2" class="captcha">
+					<input type="button" class="btn"  value="免费获取验证码" onclick="sendemail()" style="color: white; width: 95px;height:30px; background-color: darkorange">
+				</span>
+			</li>
             <li>
               <div id="changeEmailFormauthCodeErrorDiv" class="errorplace"></div>
               <div id="authCodeMsg5" style="display:none;" class="yzmplace1"> 验证码已发送到您手机<span id="mobileMsg5"></span>，如果收不到短信，请 <a id="changeEmailForm:sendAuthCodeBtn4" href="#" style="color:blue;" onclick="PrimeFaces.ab({source:this,event:'action',process:'changeEmailForm:sendAuthCodeBtn4 changeEmailForm:newEmail',oncomplete:function(xhr,status,args){s3Code(xhr, status, args, 'yy');}}, arguments[1]);;return false">语音获取</a> </div>
               <div id="authCodeMsg6" style="display:none;" class="yzmplace1"> 您的手机<span id="mobileMsg6"></span>将在60秒内收到语音电话，请接听！ </div>
-              <input type="submit" name="changeEmailForm:j_idt150" value="确　认" class="btn-ok txt-right" onclick="return changeEmailFormAll()">
-            </li>
+				<input type="button" ids="{{$persion_info['id']}}" name="changeEmailForm:j_idt150" value="确　认" class="btn-ok txt-right" id="sub_e" onclick="return changeEmailFormAll()">            </li>
           </ul>
           <input type="hidden" name="javax.faces.ViewState" id="javax.faces.ViewState" value="6247899183375709698:8256389782682127070" autocomplete="off">
         </form>
@@ -683,7 +729,7 @@
             <li> <br>
               <span style="margin-left:80px;">请您先完成手机绑定，再进行邮箱更改！</span> </li>
             <li>
-              <input type="submit" name="j_idt153" value="确认" style="margin:20px 0 20px 80px;" class="btn-ok txt-right2" onclick="displaySpan2()">
+				<input type="submit" name="j_idt153" value="确认" style="margin:20px 0 20px 80px;" class="btn-ok txt-right2" onclick="displaySpan2()">
             </li>
           </ul>
         </div>
@@ -907,28 +953,30 @@
         <h3>修改密码</h3>
         <span class="alert-close" onclick="displaySpan('alert-updatePass')"></span></div>
       <div class="alert-main">
-        <form id="updatePassForm" name="updatePassForm" method="post" action="" enctype="application/x-www-form-urlencoded">
+        <form id="updatePassForm" name="updatePassForm" method="post" action="sell_password" enctype="application/x-www-form-urlencoded">
           <input type="hidden" name="updatePassForm" value="updatePassForm">
-          <ul>
-            <li>
-              <label class="txt-name">请输入原密码</label>
-              <input id="updatePassForm:oldPassword" type="password" name="updatePassForm:oldPassword" value="" maxlength="20" onblur="jsf.util.chain(this,event,'return checkupdatePassFormOldPassword()','mojarra.ab(this,event,\'blur\',0,0)')" class="txt235">
-              <div id="oldPasswordErrorDiv" class="alert-error120"></div>
-            </li>
-            <li>
-              <label class="txt-name">请输入新密码</label>
-              <input id="updatePassForm:password" type="password" name="updatePassForm:password" value="" maxlength="20" onblur="jsf.util.chain(this,event,'return checkPassword()','mojarra.ab(this,event,\'blur\',0,0)')" class="txt235">
-              <div id="passwordErrorDiv" class="alert-error120"></div>
-            </li>
-            <li>
-              <label class="txt-name">请确认新密码</label>
-              <input id="updatePassForm:repassword" type="password" name="updatePassForm:repassword" value="" maxlength="20" onblur="return checkRepassword()" class="txt235">
-              <div id="repasswordErrorDiv" class="alert-error120"></div>
-            </li>
-            <li>
-              <input type="submit" name="updatePassForm:j_idt174" value="确 认" class="btn-ok btn-235 txt-right" onclick="return checkupdatePassFormAll()">
-            </li>
-          </ul>
+			<input type="hidden" name="id" value="{{$persion_info['id']}}">
+			<ul>
+				<li>
+					<label class="txt-name">请输入原密码</label>
+					<input id="updatePassForm:oldPassword" type="password" name="password_old" value="" maxlength="20" onblur="jsf.util.chain(this,event,'return checkupdatePassFormOldPassword()','mojarra.ab(this,event,\'blur\',0,0)')" class="txt235 password_old">
+					<div id="oldPasswordErrorDiv" class="alert-error120"></div>
+				</li>
+				<li>
+					<label class="txt-name">请输入新密码</label>
+					<input id="updatePassForm:password" type="password" name="password_new" value="" maxlength="20" onblur="jsf.util.chain(this,event,'return checkPassword()','mojarra.ab(this,event,\'blur\',0,0)')" class="txt235 password_new">
+					<div id="passwordErrorDiv" class="alert-error120"></div>
+				</li>
+				<li>
+					<label class="txt-name">请确认新密码</label>
+					<input id="updatePassForm:repassword" type="password" name="repassword_new" value="" maxlength="20" onblur="return checkRepassword()" class="txt235 repassword_new">
+					<div id="repasswordErrorDiv" class="alert-error120"></div>
+				</li>
+				<li>
+					<input type="submit" name="updatePassForm:j_idt174" value="确 认" class="btn-ok btn-235 txt-right" >
+					<!--onclick="return checkupdatePassFormAll()"-->
+				</li>
+			</ul>
         </form>
       </div>
       <script type="text/javascript">
@@ -1216,3 +1264,128 @@
   </div>
 </div>
 @include('Home.layouts.foot')
+{{--获取60s验证码--}}
+<script type="text/javascript">
+	var countdown=60;
+	function sendemail(){
+		var obj = $(".btn");
+		settime(obj);
+
+	}
+	function settime(obj) { //发送验证码倒计时
+		if (countdown == 0) {
+			obj.attr('disabled',false);
+			//obj.removeattr("disabled");
+			obj.val("免费获取验证码");
+			countdown = 60;
+			return;
+		} else {
+			obj.attr('disabled',true);
+			obj.val("重新发送(" + countdown + ")");
+			countdown--;
+		}
+		setTimeout(function() {
+					settime(obj) }
+				,1000)
+	}
+</script>
+
+
+<script>
+	//获取验证码
+	$(document).on("click",".captcha",function(){
+		var phone=$(this).attr("phone")
+		$.ajax({
+			url:"phone",
+			data:{phone:phone},
+			dataType:'json',
+			type:"GET",
+			success:function(msg){
+				SMS_code=msg
+			}
+		})
+	})
+	//验证验证码
+	$(document).on("click","#sub",function(){
+		var phone=$("#sendCode7").attr("phone")
+
+		var yzm=$('.yzm').val();
+		if(yzm==SMS_code){
+			window.location.href="cell_num?phone="+phone;
+		}else{
+			alert("请输入正确的验证码")
+		}
+	})
+	//修改邮箱
+	$(document).on("click","#sub_e",function(){
+		var email=$(".email").val()
+		var yzm=$('.captcha_phone').val();
+		var ids=$(this).attr("ids")
+		if(yzm==SMS_code){
+
+			$.ajax({
+				url:"sell_email",
+				data:{ids:ids,email:email},
+				dataType:'json',
+				type:"POST",
+				success:function(msg){
+					if(msg==1){
+						window.location.href="account";
+					}else{
+						alert("修改邮箱失败")
+					}
+				}
+			})
+
+		}else{
+			alert("请输入正确的验证码")
+		}
+	})
+	//邮箱正则验证
+	$(document).on("blur",".email",function(){
+		var email=$(this).val()
+		var reg = /^([a-zA-Z0-9_-])+@([a-zA-Z0-9_-])+((\.[a-zA-Z0-9_-]{2,3}){1,2})$/;
+		var flag=reg.test(email);
+		if(flag){
+			$("#newEmailErrorDiv").html('<span style="color: green">√</span>')
+		}else{
+			$("#newEmailErrorDiv").html('<span style="color: red">×</span>')
+		}
+	})
+	//原密码验证
+	$(document).on("blur",".password_old",function(){
+		var password_old=$(this).val()
+		var reg=/^[a-zA-Z]\w{5,17}$/
+		var flag=reg.test(password_old)
+		if(flag){
+			$("#oldPasswordErrorDiv").html('<span style="color: green">√</span>')
+		}else{
+			$("#oldPasswordErrorDiv").html('<span style="color: red">×</span>')
+		}
+	})
+	//新密码
+	$(document).on("blur",".password_new",function(){
+		password_new=$(this).val()
+		var reg=/^[a-zA-Z]\w{5,17}$/
+		var flag=reg.test(password_new)
+		if(flag){
+			$("#passwordErrorDiv").html('<span style="color: green">√</span>')
+		}else{
+			$("#passwordErrorDiv").html('<span style="color: red">×</span>')
+		}
+	})
+	//重复新密码
+	$(document).on("blur",".repassword_new",function(){
+		repassword_new=$(this).val()
+		var reg=/^[a-zA-Z]\w{5,17}$/
+		var flag=reg.test(repassword_new)
+		if(password_new!=repassword_new){
+			$("#repasswordErrorDiv").html('<span style="color: red">×</span>')
+		}else if(flag){
+			$("#repasswordErrorDiv").html('<span style="color: green">√</span>')
+		}else{
+			$("#repasswordErrorDiv").html('<span style="color: red">×</span>')
+		}
+	})
+
+</script>
